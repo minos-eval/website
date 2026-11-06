@@ -18,8 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # The site is served from github.io/website for now. Delete this line once a custom domain is set.
-      BASE_PATH: /website
+      NEXT_PUBLIC_SITE_URL: https://minoseval.com
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
