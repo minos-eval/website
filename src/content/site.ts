@@ -32,7 +32,7 @@ export interface SiteContent {
   modes: { title: string; items: { name: string; body: string }[] };
   access: { title: string; steps: string[]; note: string };
   data: { title: string; body: string };
-  close: { title: string; contactPlaceholder: string };
+  close: { title: string };
   credit: { photoLabel: string; edits: string; mural: string };
 }
 
@@ -136,7 +136,6 @@ const tr: SiteContent = {
   },
   close: {
     title: 'Bize ulaşın',
-    contactPlaceholder: 'E-posta adresi yakında',
   },
   credit: {
     photoLabel: 'Fotoğraf:',
@@ -245,7 +244,6 @@ const en: SiteContent = {
   },
   close: {
     title: 'Contact us',
-    contactPlaceholder: 'Email address coming soon',
   },
   credit: {
     photoLabel: 'Photo:',

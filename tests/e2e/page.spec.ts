@@ -35,10 +35,11 @@ test('greek word is hidden from screen readers', async ({ page }) => {
   await expect(page.locator('#minos [aria-hidden="true"]')).toHaveText('ΜΙΝΩΣ');
 });
 
-test('contact stays plain until an email exists', async ({ page }) => {
+test('contact shows no placeholder until an email exists', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('footer a[href^="mailto:"]')).toHaveCount(0);
-  await expect(page.getByText('E-posta adresi yakında')).toBeVisible();
+  await expect(page.getByText('Bize ulaşın')).toBeVisible();
+  await expect(page.getByText('E-posta adresi yakında')).toHaveCount(0);
 });
 
 test('credit is the last line and links out', async ({ page }) => {

@@ -201,6 +201,6 @@ test('the mobile menu stays reachable on a very short screen', async ({ page }) 
 test('the footer stops growing with the rest of the page on very wide screens', async ({ page }) => {
   await page.setViewportSize({ width: 2560, height: 1440 });
   await page.goto('/');
-  const footerText = await page.getByText('E-posta adresi yakında').evaluate((element) => element.getBoundingClientRect().right);
+  const footerText = await page.getByText('Bize ulaşın').evaluate((element) => element.getBoundingClientRect().right);
   expect(footerText).toBeLessThanOrEqual(2160);
 });

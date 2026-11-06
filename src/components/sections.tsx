@@ -146,12 +146,10 @@ export function Close({ c }: SectionProps) {
     <footer className={styles.footer}>
       <div className={styles.close}>
         <p className={styles.closeTitle}>{c.close.title}</p>
-        {CONTACT_EMAIL ? (
+        {CONTACT_EMAIL && (
           <a className={styles.contact} href={`mailto:${CONTACT_EMAIL}`}>
             {CONTACT_EMAIL}
           </a>
-        ) : (
-          <span className={styles.contact}>{c.close.contactPlaceholder}</span>
         )}
       </div>
       <p className={styles.credit}>
