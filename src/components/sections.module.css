@@ -1,0 +1,508 @@
+.hero,
+.problem,
+.flow,
+.rule,
+.myth,
+.modes,
+.access,
+.data,
+.footer {
+  --gutter: clamp(1.25rem, 3.34vw, 3rem);
+  --title: 'FLAR' 100, 'VOLM' 0;
+}
+
+.problem,
+.flow,
+.rule,
+.myth,
+.modes,
+.access,
+.data {
+  max-width: 110rem;
+  margin-inline: auto;
+  padding: 8rem var(--gutter);
+  scroll-margin-top: 6rem;
+}
+
+.problem h2,
+.rule h2,
+.data h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-variation-settings: var(--title);
+  font-weight: 540;
+  letter-spacing: -0.02em;
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+.flow h2,
+.access h2,
+.modes h2 {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-variation-settings: var(--title);
+  font-weight: 540;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  min-height: 36rem;
+}
+
+.heroCopy {
+  position: absolute;
+  z-index: 6;
+  top: clamp(7rem, 19vh, 11rem);
+  left: calc(min(75vw, 75rem) * 0.837);
+  right: var(--gutter);
+  max-width: 35rem;
+  opacity: var(--hero-copy-opacity, 1);
+}
+
+.heroCopy h1 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.5rem, 4.3vw, 4.25rem);
+  font-variation-settings: var(--title);
+  font-weight: 560;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.lead {
+  max-width: 31rem;
+  color: #e4d7c8;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+/* Problem */
+.problem {
+  padding-top: 7rem;
+}
+
+.problem h2 {
+  max-width: 64rem;
+}
+
+.intro {
+  max-width: 30rem;
+  margin: 3rem 0 0 63.7%;
+  color: var(--soft);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 5rem;
+}
+
+.columns > div {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.columns h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  font-variation-settings: var(--title);
+  font-weight: 540;
+  letter-spacing: -0.012em;
+  line-height: 1.2;
+}
+
+.columns p {
+  color: var(--soft);
+  font-size: 1.0625rem;
+}
+
+.approach {
+  max-width: 32rem;
+  margin: 4rem 0 0 63.7%;
+  font-size: 1.5rem;
+  line-height: 1.34;
+  text-wrap: pretty;
+}
+
+/* How it works */
+.flow {
+  display: grid;
+  grid-template-columns: 22rem 1fr;
+  gap: 4rem;
+}
+
+.flow h2 {
+  position: sticky;
+  top: 8.5rem;
+  align-self: start;
+}
+
+.flow ol {
+  list-style: none;
+}
+
+.flow li {
+  display: grid;
+  grid-template-columns: 3.25rem 1fr 25rem;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.flow li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.flow strong {
+  font-size: 1.875rem;
+  font-variation-settings: var(--title);
+  font-weight: 530;
+  letter-spacing: -0.012em;
+  line-height: 1.15;
+}
+
+.number {
+  color: var(--dim);
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.stepBody {
+  color: var(--soft);
+  font-size: 1.0625rem;
+}
+
+.flow li.human strong {
+  color: var(--red);
+}
+
+/* Decision rule */
+.rule h2 {
+  max-width: 50rem;
+  margin-bottom: 5rem;
+}
+
+.ruleGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7rem;
+  align-items: start;
+}
+
+.statements p {
+  padding: 1.35rem 0;
+  border-top: 1px solid var(--line);
+  font-size: 1.5rem;
+  line-height: 1.34;
+  text-wrap: pretty;
+}
+
+.statements em {
+  color: var(--red);
+  font-style: normal;
+  font-weight: 560;
+}
+
+.example {
+  font-size: 1.0625rem;
+}
+
+.tag {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.05rem 0.5rem;
+  border: 1px solid #4a3a2e;
+  border-radius: 0.3rem;
+  color: var(--soft);
+  font-size: 0.875rem;
+  font-weight: 550;
+}
+
+.example dl > div {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 0.5rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.example dt {
+  color: var(--dim);
+}
+
+.verdict {
+  color: var(--red);
+  font-weight: 560;
+}
+
+/* Why Minos */
+.myth {
+  overflow: hidden;
+  padding-top: 6rem;
+}
+
+.greek {
+  margin-left: -0.04em;
+  color: var(--greek);
+  font-size: clamp(3.5rem, 17.2vw, 15.5rem);
+  font-variation-settings: var(--title);
+  font-weight: 520;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.tale {
+  max-width: 32rem;
+  margin: 2.5rem 0 0 63.7%;
+}
+
+.tale h2 {
+  margin-bottom: 1rem;
+  font-size: 2.25rem;
+  font-variation-settings: var(--title);
+  font-weight: 540;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.tale p {
+  color: var(--soft);
+}
+
+/* Judge modes */
+.modes h2 {
+  max-width: 44rem;
+  margin-bottom: 4rem;
+}
+
+.modeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.modeGrid > div {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.modeGrid h3 {
+  margin-bottom: 0.5rem;
+  font-size: 2.25rem;
+  font-variation-settings: var(--title);
+  font-weight: 530;
+  letter-spacing: -0.012em;
+  line-height: 1.15;
+}
+
+.modeGrid p {
+  color: var(--soft);
+}
+
+/* Access */
+.access {
+  display: grid;
+  grid-template-columns: 22rem 1fr;
+  gap: 4rem;
+}
+
+.stairs {
+  list-style: none;
+}
+
+.stairs li {
+  padding: 1.1rem 0;
+  font-size: 2.25rem;
+  font-variation-settings: var(--title);
+  font-weight: 520;
+  letter-spacing: -0.012em;
+  line-height: 1.2;
+}
+
+.stairs li:nth-child(2) {
+  margin-left: 7rem;
+}
+
+.stairs li:nth-child(3) {
+  margin-left: 14rem;
+}
+
+.note {
+  max-width: 34rem;
+  margin-top: 2.5rem;
+  color: var(--soft);
+  font-size: 1.0625rem;
+}
+
+/* Data security */
+.data {
+  padding-bottom: 11rem;
+}
+
+.data h2 {
+  max-width: 58rem;
+  font-size: clamp(2.5rem, 5.6vw, 5rem);
+  line-height: 1.04;
+}
+
+.data p {
+  max-width: 30rem;
+  margin: 3rem 0 0 63.7%;
+  color: var(--soft);
+}
+
+/* Close */
+.footer {
+  padding: 12rem var(--gutter) 1.5rem;
+  background:
+    linear-gradient(180deg, var(--ground) 0, rgb(20 12 7 / 0.2) 62%, rgb(20 12 7 / 0.5) 100%),
+    url('/art/minos-kumas.webp') center bottom / cover no-repeat;
+}
+
+.close {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.closeTitle {
+  max-width: 40rem;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-variation-settings: var(--title);
+  font-weight: 540;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.contact {
+  flex: none;
+  font-size: 1.25rem;
+  font-weight: 560;
+}
+
+a.contact {
+  text-underline-offset: 0.3rem;
+}
+
+.credit {
+  margin-top: 6rem;
+  color: #f0dcc9;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1023.98px) {
+  .problem,
+  .flow,
+  .rule,
+  .myth,
+  .modes,
+  .access,
+  .data {
+    padding-block: 5rem;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    padding-top: 93.6vw;
+  }
+
+  .heroCopy {
+    position: relative;
+    z-index: 4;
+    top: auto;
+    left: auto;
+    right: auto;
+    max-width: 40rem;
+    padding: 0 var(--gutter) 3rem;
+    opacity: 1;
+  }
+
+  .intro,
+  .approach,
+  .tale,
+  .data p {
+    margin-left: 0;
+  }
+
+  .columns,
+  .modeGrid,
+  .ruleGrid,
+  .flow,
+  .access {
+    grid-template-columns: 1fr;
+  }
+
+  .columns,
+  .modeGrid {
+    gap: 2rem;
+  }
+
+  .ruleGrid {
+    gap: 3rem;
+  }
+
+  .flow,
+  .access {
+    gap: 2rem;
+  }
+
+  .flow h2 {
+    position: static;
+  }
+
+  .flow li {
+    grid-template-columns: 2.25rem 1fr;
+  }
+
+  .stepBody {
+    grid-column: 2;
+  }
+
+  .flow strong {
+    font-size: 1.5rem;
+  }
+
+  .stairs li {
+    font-size: 1.625rem;
+  }
+
+  .stairs li:nth-child(2) {
+    margin-left: 1.5rem;
+  }
+
+  .stairs li:nth-child(3) {
+    margin-left: 3rem;
+  }
+
+  .example dl > div {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .close {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer {
+    padding-top: 8rem;
+  }
+
+  .credit {
+    margin-top: 4rem;
+  }
+}
