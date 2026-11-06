@@ -2,6 +2,7 @@
 
 import { Fragment, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { localePath, locales, type SiteContent } from '@/content/site';
+import { withBase } from '@/lib/base-path';
 import styles from './SiteHeader.module.css';
 
 const NO_SCRIPT_RULES = `@media (max-width:1023.98px){
@@ -59,7 +60,7 @@ export function SiteHeader({ content }: { content: SiteContent }) {
       <header ref={header} className={styles.header} data-header>
         <a className={styles.brand} href="#top">
           <span className={styles.tile}>
-            <img className={styles.logo} src="/logo.png" alt="" width={100} height={100} />
+            <img className={styles.logo} src={withBase('/logo.png')} alt="" width={100} height={100} />
           </span>
           MINOS
         </a>
@@ -97,7 +98,7 @@ export function SiteHeader({ content }: { content: SiteContent }) {
                     {option.toUpperCase()}
                   </span>
                 ) : (
-                  <a className={styles.option} href={`${localePath[option]}${hash}`} lang={option}>
+                  <a className={styles.option} href={`${withBase(localePath[option])}${hash}`} lang={option}>
                     {option.toUpperCase()}
                   </a>
                 )}

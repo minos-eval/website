@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { withBase } from './base-path';
 import { content, localePath, type Locale } from '@/content/site';
 
 export function metadataFor(locale: Locale): Metadata {
@@ -8,15 +9,15 @@ export function metadataFor(locale: Locale): Metadata {
     title,
     description,
     alternates: {
-      canonical: localePath[locale],
-      languages: { en: localePath.en, tr: localePath.tr, 'x-default': localePath.en },
+      canonical: withBase(localePath[locale]),
+      languages: { en: withBase(localePath.en), tr: withBase(localePath.tr), 'x-default': withBase(localePath.en) },
     },
     openGraph: {
       title,
       description,
       type: 'website',
       locale: locale === 'tr' ? 'tr_TR' : 'en_US',
-      images: [{ url: '/art/og.jpg', width: 1200, height: 630 }],
+      images: [{ url: withBase('/art/og.jpg'), width: 1200, height: 630 }],
     },
   };
 }

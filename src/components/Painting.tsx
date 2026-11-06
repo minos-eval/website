@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useLayoutEffect, useRef } from 'react';
+import { withBase } from '@/lib/base-path';
 import { collapseFrame } from '@/lib/collapse';
 import styles from './Painting.module.css';
 
@@ -68,7 +69,7 @@ export function Painting() {
       <Image
         ref={image}
         className={styles.image}
-        src="/art/minos-clean.webp"
+        src={withBase('/art/minos-clean.webp')}
         alt=""
         width={1387}
         height={2080}
