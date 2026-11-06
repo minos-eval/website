@@ -58,7 +58,7 @@ test('keyboard reaches the brand, tabs and language', async ({ page }) => {
     await page.keyboard.press('Tab');
     reached.push(await page.evaluate(() => (document.activeElement as HTMLElement).innerText.trim()));
   }
-  expect(reached).toEqual(['MINOS Evals', ...tabs, 'EN']);
+  expect(reached).toEqual(['MINOS', ...tabs, 'EN']);
 });
 
 test.describe('on a phone', () => {
