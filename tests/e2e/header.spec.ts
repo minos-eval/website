@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 
-const tabs = ['Nasıl çalışır', 'Karar kuralı', 'Neden Minos', 'Erişim', 'Veri güvenliği'];
+const tabs = ['Sorun', 'Nasıl çalışır', 'Karar kuralı', 'Neden Minos', 'Erişim', 'Veri güvenliği'];
 const nav = (page: Page) => page.getByRole('navigation', { name: 'Sayfa bölümleri' });
 const centerSection = (page: Page, id: string) =>
   page.evaluate((target) => {
@@ -9,7 +9,7 @@ const centerSection = (page: Page, id: string) =>
     window.scrollTo({ top: top - window.innerHeight * 0.3, behavior: 'instant' });
   }, id);
 
-test('five tabs in order', async ({ page }) => {
+test('six tabs in order', async ({ page }) => {
   await page.goto('/');
   const labels = await nav(page).locator('a[href^="#"]').allInnerTexts();
   expect(labels).toEqual(tabs);
@@ -54,7 +54,7 @@ test('english page links back to turkish', async ({ page }) => {
 test('keyboard reaches the brand, tabs and language', async ({ page }) => {
   await page.goto('/');
   const reached: string[] = [];
-  for (let press = 0; press < 7; press += 1) {
+  for (let press = 0; press < tabs.length + 2; press += 1) {
     await page.keyboard.press('Tab');
     reached.push(await page.evaluate(() => (document.activeElement as HTMLElement).innerText.trim()));
   }

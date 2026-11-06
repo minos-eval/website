@@ -79,7 +79,7 @@ test.describe('without JavaScript', () => {
     test('every tab and the language link sit on screen', async ({ page }) => {
       await page.goto('/');
       const links = page.getByRole('navigation').getByRole('link');
-      await expect(links).toHaveCount(6);
+      await expect(links).toHaveCount(7);
       for (const link of await links.all()) {
         await expect(link).toBeInViewport({ ratio: 1 });
       }

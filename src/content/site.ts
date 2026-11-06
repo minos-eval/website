@@ -1,5 +1,5 @@
 export type Locale = 'tr' | 'en';
-export type SectionId = 'how' | 'rule' | 'minos' | 'access' | 'data';
+export type SectionId = 'problem' | 'how' | 'rule' | 'minos' | 'access' | 'data';
 
 /** Stays null until a publishable address exists. The closing link is not rendered without it. */
 export const CONTACT_EMAIL: string | null = null;
@@ -43,6 +43,7 @@ const tr: SiteContent = {
     description: 'Kurumsal yapay zekâ asistanınızı kaynak koduna dokunmadan test eden değerlendirme ve izleme katmanı.',
   },
   nav: [
+    { id: 'problem', label: 'Sorun' },
     { id: 'how', label: 'Nasıl çalışır' },
     { id: 'rule', label: 'Karar kuralı' },
     { id: 'minos', label: 'Neden Minos' },
@@ -151,6 +152,7 @@ const en: SiteContent = {
     description: 'An evaluation and monitoring layer that tests your enterprise AI assistant without touching its source code.',
   },
   nav: [
+    { id: 'problem', label: 'Problem' },
     { id: 'how', label: 'How it works' },
     { id: 'rule', label: 'Decision rule' },
     { id: 'minos', label: 'Why Minos' },
