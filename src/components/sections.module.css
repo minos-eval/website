@@ -110,14 +110,6 @@
   text-transform: uppercase;
 }
 
-.intro {
-  max-width: 44rem;
-  margin: 2.25rem 0 0;
-  color: var(--soft);
-  font-size: 1.25rem;
-  line-height: 1.6;
-}
-
 .columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -625,7 +617,6 @@ a.contact {
     opacity: 1;
   }
 
-  .intro,
   .approach,
   .tale,
   .data p {
