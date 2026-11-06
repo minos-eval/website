@@ -135,7 +135,7 @@ const tr: SiteContent = {
     body: 'Bu bir politika metni değil. Koşu başlarken ve her judge çağrısında kodla zorlanır.',
   },
   close: {
-    title: 'Asistanınız için böyle bir değerlendirme kurmak isterseniz yazın.',
+    title: 'Bize ulaşın',
     contactPlaceholder: 'E-posta adresi yakında',
   },
   credit: {
@@ -244,7 +244,7 @@ const en: SiteContent = {
     body: 'This is not a policy statement. It is enforced in code at the start of a run and on every judge call.',
   },
   close: {
-    title: 'If you want this kind of evaluation for your assistant, write to us.',
+    title: 'Contact us',
     contactPlaceholder: 'Email address coming soon',
   },
   credit: {
