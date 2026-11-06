@@ -18,7 +18,6 @@ export interface SiteContent {
   problem: {
     label: string;
     title: string;
-    intro: string;
     items: { title: string; body: string }[];
     today: string;
     approach: string;
@@ -63,8 +62,6 @@ const tr: SiteContent = {
   problem: {
     label: 'Sorun',
     title: 'Klasik testler sabit bir doğru cevap varsayar. LLM uygulamalarında bu nadiren vardır.',
-    intro:
-      'Sohbet botları, kod inceleme botları ve test üreticileri artık günlük yazılımın parçası. Bunları değerlendirmek, sıradan yazılım testinin dayandığı varsayımları bozuyor.',
     items: [
       {
         title: 'Birden çok geçerli cevap',
@@ -171,8 +168,6 @@ const en: SiteContent = {
   problem: {
     label: 'The problem',
     title: 'Conventional tests assume a stable right answer. LLM apps rarely have one.',
-    intro:
-      'Chatbots, code-review bots and test generators are now part of everyday software. Evaluating them breaks the assumptions that ordinary software testing relies on.',
     items: [
       {
         title: 'Many valid answers',
@@ -187,7 +182,7 @@ const en: SiteContent = {
         body: 'LLM-as-a-judge scales review, but its decisions do not always agree with human experts. A judge that is never checked becomes a hidden risk.',
       },
     ],
-    today: 'Today, test teams still ask the questions by hand and grade the answers by hand.',
+    today: 'Today, test teams still ask the questions manually and grade the answers by hand.',
     approach:
       'MINOS works to make this problem as deterministic as it can. Cases are fixed revisions, code checks run the same way every time, and the final verdict comes from a deterministic rule, not a model’s impression.',
   },
