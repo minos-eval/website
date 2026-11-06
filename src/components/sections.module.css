@@ -4,7 +4,6 @@
 .rule,
 .myth,
 .modes,
-.access,
 .data,
 .footer {
   --gutter: clamp(1.25rem, 3.34vw, 3rem);
@@ -16,7 +15,6 @@
 .rule,
 .myth,
 .modes,
-.access,
 .data {
   max-width: 110rem;
   margin-inline: auto;
@@ -36,7 +34,6 @@
 }
 
 .flow h2,
-.access h2,
 .modes h2 {
   font-size: clamp(2rem, 3.4vw, 3rem);
   font-variation-settings: var(--title);
@@ -447,41 +444,6 @@
   color: var(--soft);
 }
 
-/* Access */
-.access {
-  display: grid;
-  grid-template-columns: 22rem minmax(0, 1fr);
-  gap: 4rem;
-}
-
-.stairs {
-  list-style: none;
-}
-
-.stairs li {
-  padding: 1.1rem 0;
-  font-size: 2.25rem;
-  font-variation-settings: var(--title);
-  font-weight: 520;
-  letter-spacing: -0.012em;
-  line-height: 1.2;
-}
-
-.stairs li:nth-child(2) {
-  margin-left: 7rem;
-}
-
-.stairs li:nth-child(3) {
-  margin-left: 14rem;
-}
-
-.note {
-  max-width: 34rem;
-  margin-top: 2.5rem;
-  color: var(--soft);
-  font-size: 1.0625rem;
-}
-
 /* Data security */
 .data {
   padding-bottom: 11rem;
@@ -562,8 +524,7 @@ a.contact {
 }
 
 @media (max-width: 1279.98px) {
-  .flow,
-  .access {
+  .flow {
     grid-template-columns: 15rem minmax(0, 1fr);
     gap: 3rem;
   }
@@ -576,17 +537,6 @@ a.contact {
     grid-column: 2;
   }
 
-  .stairs li {
-    font-size: 1.875rem;
-  }
-
-  .stairs li:nth-child(2) {
-    margin-left: 3rem;
-  }
-
-  .stairs li:nth-child(3) {
-    margin-left: 6rem;
-  }
 }
 
 @media (max-width: 1023.98px) {
@@ -595,7 +545,6 @@ a.contact {
   .rule,
   .myth,
   .modes,
-  .access,
   .data {
     padding-block: 5rem;
   }
@@ -626,8 +575,7 @@ a.contact {
   .columns,
   .modeGrid,
   .ruleGrid,
-  .flow,
-  .access {
+  .flow {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -649,8 +597,7 @@ a.contact {
     gap: 3rem;
   }
 
-  .flow,
-  .access {
+  .flow {
     gap: 2rem;
   }
 
@@ -664,18 +611,6 @@ a.contact {
 
   .flow strong {
     font-size: 1.5rem;
-  }
-
-  .stairs li {
-    font-size: 1.625rem;
-  }
-
-  .stairs li:nth-child(2) {
-    margin-left: 1.5rem;
-  }
-
-  .stairs li:nth-child(3) {
-    margin-left: 3rem;
   }
 
   .example dl > div {

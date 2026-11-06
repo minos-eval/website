@@ -4,7 +4,7 @@ export type Locale = 'tr' | 'en';
 export const locales: readonly Locale[] = ['en', 'tr'];
 export const localePath: Record<Locale, string> = { en: '/', tr: '/tr' };
 
-export type SectionId = 'problem' | 'how' | 'rule' | 'minos' | 'access' | 'data';
+export type SectionId = 'problem' | 'how' | 'rule' | 'minos' | 'data';
 
 /** Stays null until a publishable address exists. The closing link is not rendered without it. */
 export const CONTACT_EMAIL: string | null = null;
@@ -33,7 +33,6 @@ export interface SiteContent {
   };
   myth: { title: string; body: string };
   modes: { title: string; items: { name: string; body: string }[] };
-  access: { title: string; steps: string[]; note: string };
   data: { title: string; body: string };
   close: { title: string };
   credit: { photoLabel: string; edits: string; mural: string };
@@ -50,7 +49,6 @@ const tr: SiteContent = {
     { id: 'how', label: 'Nasıl çalışır' },
     { id: 'rule', label: 'Karar kuralı' },
     { id: 'minos', label: 'Neden Minos' },
-    { id: 'access', label: 'Erişim' },
     { id: 'data', label: 'Veri güvenliği' },
   ],
   menu: { open: 'Menüyü aç', close: 'Menüyü kapat', language: 'Dil', sections: 'Sayfa bölümleri' },
@@ -124,11 +122,6 @@ const tr: SiteContent = {
       { name: 'Otomatik', body: 'Judge’ın sonuçları karara doğrudan girer.' },
     ],
   },
-  access: {
-    title: 'Erişim adım adım genişler',
-    steps: ['Elle toplanan cevapları içe aktarın.', 'Servis API’sine bağlanın.', 'Daha derin kayıtlara geçin.'],
-    note: 'Başlamak için kaynak kod gerekmez. Her yeni hedef sistem için entegrasyon gerekir.',
-  },
   data: {
     title: 'Cevaplar yalnızca sizin modellerinize gider.',
     body: 'Bu bir politika metni değil. Koşu başlarken ve her judge çağrısında kodla zorlanır.',
@@ -154,7 +147,6 @@ const en: SiteContent = {
     { id: 'how', label: 'How it works' },
     { id: 'rule', label: 'Decision rule' },
     { id: 'minos', label: 'Why Minos' },
-    { id: 'access', label: 'Access' },
     { id: 'data', label: 'Data security' },
   ],
   menu: { open: 'Open menu', close: 'Close menu', language: 'Language', sections: 'Page sections' },
@@ -227,11 +219,6 @@ const en: SiteContent = {
       { name: 'Suggest', body: 'The judge suggests, a person decides.' },
       { name: 'Auto', body: 'The judge’s results go straight into the verdict.' },
     ],
-  },
-  access: {
-    title: 'Access grows step by step',
-    steps: ['Import answers collected by hand.', 'Connect to the service API.', 'Move on to deeper records.'],
-    note: 'You don’t need source code to start. Each new target system needs an integration.',
   },
   data: {
     title: 'Answers only go to your own models.',

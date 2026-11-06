@@ -6,12 +6,11 @@ const locales = ['tr', 'en'] as const;
 describe('site content', () => {
   test.each(locales)('%s has the fixed section shape', (locale) => {
     const c = content[locale];
-    expect(c.nav.map((item) => item.id)).toEqual(['problem', 'how', 'rule', 'minos', 'access', 'data']);
+    expect(c.nav.map((item) => item.id)).toEqual(['problem', 'how', 'rule', 'minos', 'data']);
     expect(c.how.steps).toHaveLength(7);
     expect(c.how.steps.findIndex((step) => step.human)).toBe(4);
     expect(c.rule.statements).toHaveLength(4);
     expect(c.modes.items).toHaveLength(3);
-    expect(c.access.steps).toHaveLength(3);
   });
 
   test('tr hero copy is the approved line', () => {

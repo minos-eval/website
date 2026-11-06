@@ -243,7 +243,7 @@ Titles balance their line breaks and reading sentences use pretty wrapping. Sequ
 
 The page is one long column of full-width sections with a 110rem maximum, centred, using a fluid gutter. Sections are spaced by `section` padding, dropping to `section-stacked` below 1024px. Anchored sections stop 6rem below the top, so a title never hides under the menu bar. The opening section is full height, and the painting occupies min(75vw, 75rem) from the left edge, with the copy to its right at gaze height.
 
-Three grids recur. Equal thirds with a 3rem gap hold parallel ideas. A narrow sticky title column (22rem, 15rem below 1280px) beside a flowing list holds sequences. Equal halves with a 7rem gap pair an argument with its worked example. Access levels use stepped indents of 7rem and 14rem (3rem and 6rem below 1280px, 1.5rem and 3rem below 1024px), so the list itself draws a staircase.
+Three grids recur. Equal thirds with a 3rem gap hold parallel ideas. A narrow sticky title column (22rem, 15rem below 1280px) beside a flowing list holds sequences. Equal halves with a 7rem gap pair an argument with its worked example.
 
 Below 1024px every grid collapses to one column, offset copy returns to the left edge, the painting moves above the copy at min(93.6vw, 60svh) tall, and the tabs fold into a menu. Body text stays at its desktop size.
 

@@ -113,22 +113,6 @@ export function Modes({ c }: SectionProps) {
   );
 }
 
-export function Access({ c }: SectionProps) {
-  return (
-    <section className={styles.access} id="access">
-      <h2>{c.access.title}</h2>
-      <div>
-        <ol className={styles.stairs}>
-          {c.access.steps.map((step) => (
-            <li key={step}>{step}</li>
-          ))}
-        </ol>
-        <p className={styles.note}>{c.access.note}</p>
-      </div>
-    </section>
-  );
-}
-
 export function Data({ c }: SectionProps) {
   return (
     <section className={styles.data} id="data">

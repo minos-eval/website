@@ -30,7 +30,7 @@ async function scrollPositions(page: Page, url: string) {
 }
 
 test.describe('arriving at a section', () => {
-  for (const url of ['/#access', '/tr#rule']) {
+  for (const url of ['/#data', '/tr#rule']) {
     test(`${url} does not glide through the hero`, async ({ page }) => {
       const positions = await scrollPositions(page, url);
       const target = positions[positions.length - 1];
@@ -79,7 +79,7 @@ test.describe('without JavaScript', () => {
     test('every tab and the language link sit on screen', async ({ page }) => {
       await page.goto('/');
       const links = page.getByRole('navigation').getByRole('link');
-      await expect(links).toHaveCount(7);
+      await expect(links).toHaveCount(6);
       for (const link of await links.all()) {
         await expect(link).toBeInViewport({ ratio: 1 });
       }

@@ -27,7 +27,7 @@ test('hero copy fades out as the painting leaves', async ({ page }) => {
 });
 
 test('deep link opens in bar state', async ({ page }) => {
-  await page.goto('/#access');
+  await page.goto('/#data');
   await expect.poll(() => boxHeight(page)).toBe(84);
   await expect(page.locator('[data-hero-copy]')).toHaveCSS('opacity', '0');
 });

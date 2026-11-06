@@ -1,6 +1,6 @@
 import type { SiteContent } from '@/content/site';
 import { Painting } from './Painting';
-import { Access, Close, Data, Hero, How, Modes, Myth, Problem, Rule } from './sections';
+import { Close, Data, Hero, How, Modes, Myth, Problem, Rule } from './sections';
 import { SiteHeader } from './SiteHeader';
 
 export function MinosPage({ content }: { content: SiteContent }) {
@@ -15,7 +15,6 @@ export function MinosPage({ content }: { content: SiteContent }) {
         <Rule c={content} />
         <Myth c={content} />
         <Modes c={content} />
-        <Access c={content} />
         <Data c={content} />
       </main>
       <Close c={content} />
