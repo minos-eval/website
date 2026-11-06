@@ -31,11 +31,13 @@ export function Problem({ c }: SectionProps) {
   const { label, title, intro, items, today, approach } = c.problem;
   return (
     <section className={styles.problem} id="problem" aria-label={label}>
+      <p className={styles.eyebrow}>{label}</p>
       <h2>{title}</h2>
       <p className={styles.intro}>{intro}</p>
       <div className={styles.columns}>
-        {items.map((item) => (
+        {items.map((item, index) => (
           <div key={item.title}>
+            <span className={styles.itemNumber}>{String(index + 1).padStart(2, '0')}</span>
             <h3>{item.title}</h3>
             <p>{item.body}</p>
           </div>
