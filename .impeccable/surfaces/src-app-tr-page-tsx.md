@@ -21,6 +21,6 @@ STORY: The visitor learns why ordinary tests fail on LLM apps, how the flow work
 
 FIRST VIEWPORT: Painting anchored left, about three quarters of the viewport wide, head and shoulders, dissolving to the ground to the right and below. Title and lead sit to its right at gaze height. Fixed tabs run along the top right. No button.
 
-FORM: Pinned by the user, chosen from three comps as "A · Karanlık". Signature interaction: on scroll the painting shrinks into the fixed menu bar and leaves the strip with the eye as the bar's background. seed: none (unavailable)
+FORM: Pinned by the user, chosen from three comps as "A · Karanlık". Signature interaction: on scroll the painting shrinks into the fixed menu bar and leaves the strip with the eye as the bar's background. seed:8cfb4aed8b3aa992
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

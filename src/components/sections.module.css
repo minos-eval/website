@@ -64,6 +64,12 @@
   opacity: var(--hero-copy-opacity, 1);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .heroCopy {
+    z-index: 4;
+  }
+}
+
 .heroCopy h1 {
   margin-bottom: 1.5rem;
   font-size: clamp(2.5rem, 4.3vw, 4.25rem);
@@ -363,10 +369,30 @@
 
 /* Close */
 .footer {
+  position: relative;
+  isolation: isolate;
   padding: 12rem var(--gutter) 1.5rem;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: max(25.4vw, 24rem);
   background:
-    linear-gradient(180deg, var(--ground) 0, rgb(20 12 7 / 0.2) 62%, rgb(20 12 7 / 0.5) 100%),
+    linear-gradient(0deg, rgb(20 12 7 / 0.55), rgb(20 12 7 / 0.12) 70%),
     url('/art/minos-kumas.webp') center bottom / cover no-repeat;
+  -webkit-mask-image: linear-gradient(0deg, #000 58%, transparent 100%);
+  mask-image: linear-gradient(0deg, #000 58%, transparent 100%);
+}
+
+.close,
+.credit {
+  max-width: calc(110rem - 2 * var(--gutter));
+  margin-inline: auto;
 }
 
 .close {
@@ -445,7 +471,7 @@ a.contact {
   .hero {
     height: auto;
     min-height: 100svh;
-    padding-top: 93.6vw;
+    padding-top: min(93.6vw, 60svh);
   }
 
   .heroCopy {

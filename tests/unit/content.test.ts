@@ -19,7 +19,7 @@ describe('site content', () => {
   });
 
   test('en hero copy is the approved line', () => {
-    expect(content.en.hero.title).toBe("When two judges can't decide, the last word is yours.");
+    expect(content.en.hero.title).toBe('When two judges can’t decide, the last word is yours.');
   });
 
   test.each(locales)('%s problem has three points and the determinism line', (locale) => {
@@ -43,6 +43,14 @@ describe('site content', () => {
     for (const banned of ['black box', 'kara kutu', 'her llm', 'any llm', '0.7', '0,7', 'havayolu', 'airline', 'uçuş', 'flight']) {
       expect(text).not.toContain(banned);
     }
+  });
+
+  test.each(locales)('%s uses typographic apostrophes', (locale) => {
+    expect(JSON.stringify(content[locale])).not.toContain("'");
+  });
+
+  test.each(locales)('%s credits the painter by the standard spelling', (locale) => {
+    expect(content[locale].credit.mural).toContain('Eduard Lebiedzki');
   });
 
   test.each(locales)('%s keeps product terms and labels the sample', (locale) => {

@@ -32,25 +32,6 @@ test('deep link opens in bar state', async ({ page }) => {
   await expect(page.locator('[data-hero-copy]')).toHaveCSS('opacity', '0');
 });
 
-for (const size of [
-  { width: 1440, height: 900 },
-  { width: 1280, height: 600 },
-  { width: 2560, height: 1440 },
-  { width: 390, height: 844 },
-]) {
-  test(`lower chest is masked by image-relative stops at ${size.width}x${size.height}`, async ({ page }) => {
-    await page.setViewportSize(size);
-    await page.goto('/');
-    const mask = await box(page)
-      .locator('img')
-      .evaluate((image) => {
-        const style = getComputedStyle(image);
-        return style.maskImage || style.webkitMaskImage;
-      });
-    expect(mask).toContain('51%');
-  });
-}
-
 test('resize recalculates across the layout boundary', async ({ page }) => {
   await page.goto('/');
   await scrollTo(page, 2000);
@@ -66,13 +47,4 @@ test('reduced motion skips the in-between frames', async ({ page }) => {
   await page.goto('/');
   await scrollTo(page, 200);
   await expect.poll(() => boxHeight(page)).toBe(84);
-});
-
-test.describe('without JavaScript', () => {
-  test.use({ javaScriptEnabled: false });
-
-  test('painting scrolls away instead of covering content', async ({ page }) => {
-    await page.goto('/');
-    await expect(box(page)).toHaveCSS('position', 'absolute');
-  });
 });

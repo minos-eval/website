@@ -22,7 +22,7 @@ html {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  html {
+  html[data-smooth] {
     scroll-behavior: smooth;
   }
 }

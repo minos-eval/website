@@ -81,8 +81,8 @@ const tr: SiteContent = {
     title: 'Nasıl çalışır',
     steps: [
       { title: 'Vakayı yazın', body: 'Soru, referans ve kriterler. Her değişiklik yeni bir revizyondur, eskisi değişmez.' },
-      { title: 'Koşuyu başlatın', body: "Hedefi, modeli ve judge'ı seçersiniz. Tek seferlik ya da zamanlanmış." },
-      { title: 'Cevaplar toplanır', body: "Cevap, süre ve araç çağrıları asistanın API'sinden gelir." },
+      { title: 'Koşuyu başlatın', body: 'Hedefi, modeli ve judge’ı seçersiniz. Tek seferlik ya da zamanlanmış.' },
+      { title: 'Cevaplar toplanır', body: 'Cevap, süre ve araç çağrıları asistanın API’sinden gelir.' },
       { title: 'Puanlanır', body: 'Kod kontrolleri ve LLM judge her metriği ayrı ayrı değerlendirir.' },
       {
         title: 'Yalnızca belirsizi siz etiketlersiniz',
@@ -114,19 +114,19 @@ const tr: SiteContent = {
   },
   myth: {
     title: 'Neden Minos?',
-    body: "Platon'un Gorgias diyaloğunda ölüleri üç yargıç yargılar. Diğer ikisi kararsız kalırsa son sözü Minos söyler. Burada da önce kurallar ve judge konuşur. Belirsiz kalan cevapta son söz sizindir.",
+    body: 'Platon’un Gorgias diyaloğunda ölüleri üç yargıç yargılar. Diğer ikisi kararsız kalırsa son sözü Minos söyler. Burada da önce kurallar ve judge konuşur. Belirsiz kalan cevapta son söz sizindir.',
   },
   modes: {
-    title: "Judge'ın ne kadar söz sahibi olacağını siz seçersiniz.",
+    title: 'Judge’ın ne kadar söz sahibi olacağını siz seçersiniz.',
     items: [
       { name: 'Kapalı', body: 'Judge çalışmaz.' },
       { name: 'Öneri', body: 'Judge önerir, insan karar verir.' },
-      { name: 'Otomatik', body: "Judge'ın sonuçları karara doğrudan girer." },
+      { name: 'Otomatik', body: 'Judge’ın sonuçları karara doğrudan girer.' },
     ],
   },
   access: {
     title: 'Erişim adım adım genişler',
-    steps: ['Elle toplanan cevapları içe aktarın.', "Servis API'sine bağlanın.", 'Daha derin kayıtlara geçin.'],
+    steps: ['Elle toplanan cevapları içe aktarın.', 'Servis API’sine bağlanın.', 'Daha derin kayıtlara geçin.'],
     note: 'Başlamak için kaynak kod gerekmez. Her yeni hedef sistem için entegrasyon gerekir.',
   },
   data: {
@@ -140,7 +140,7 @@ const tr: SiteContent = {
   credit: {
     photoLabel: 'Fotoğraf:',
     edits: 'kırpıldı ve rötuşlandı.',
-    mural: 'Duvar resmi: Carl Rahl ve Edward Lebietski, Atina Üniversitesi.',
+    mural: 'Duvar resmi: Carl Rahl ve Eduard Lebiedzki, Atina Üniversitesi.',
   },
 };
 
@@ -159,7 +159,7 @@ const en: SiteContent = {
   ],
   menu: { open: 'Open menu', close: 'Close menu', language: 'Language', sections: 'Page sections' },
   hero: {
-    title: "When two judges can't decide, the last word is yours.",
+    title: 'When two judges can’t decide, the last word is yours.',
     lead: 'MINOS Evals tests your enterprise AI assistant without touching its source code. Rules and an LLM judge do the scoring, and only the answers that stay uncertain come to you.',
   },
   problem: {
@@ -183,18 +183,18 @@ const en: SiteContent = {
     ],
     today: 'Today, test teams still ask the questions by hand and grade the answers by hand.',
     approach:
-      "MINOS Evals works to make this problem as deterministic as it can. Cases are fixed revisions, code checks run the same way every time, and the final verdict comes from a deterministic rule, not a model's impression.",
+      'MINOS Evals works to make this problem as deterministic as it can. Cases are fixed revisions, code checks run the same way every time, and the final verdict comes from a deterministic rule, not a model’s impression.',
   },
   how: {
     title: 'How it works',
     steps: [
       { title: 'Write the case', body: 'Question, reference and criteria. Every change makes a new revision, the old one stays as it was.' },
       { title: 'Start the run', body: 'You choose the target, the model and the judge. One-off or scheduled.' },
-      { title: 'Answers are collected', body: "The answer, latency and tool calls come from the assistant's API." },
+      { title: 'Answers are collected', body: 'The answer, latency and tool calls come from the assistant’s API.' },
       { title: 'They are scored', body: 'Code checks and an LLM judge assess each metric separately.' },
       {
         title: 'You label only what stays uncertain',
-        body: "Answers the machine can't be sure about come to you. The rest do not.",
+        body: 'Answers the machine can’t be sure about come to you. The rest do not.',
         human: true,
       },
       { title: 'Labels carry to later runs', body: 'When the same answer comes back, your label is remembered.' },
@@ -207,12 +207,12 @@ const en: SiteContent = {
       'The judge writes pass, fail or unknown for each metric and attaches its evidence.',
       'The final verdict comes from these results through a deterministic rule.',
       'Without critical evidence the result is not “pass”, it becomes needs_review.',
-      "A metric that can't be measured is not a failure. It is left out.",
+      'A metric that can’t be measured is not a failure. It is left out.',
     ],
     example: {
       tag: 'Sample',
       rows: [
-        { label: 'Question', value: "How many days' notice does the supplier contract require for termination?" },
+        { label: 'Question', value: 'How many days’ notice does the supplier contract require for termination?' },
         { label: 'Answer', value: '30 days.' },
         { label: 'Correctness', value: 'Pass. Matches the reference.' },
         { label: 'Grounding', value: 'Unknown. The answer cited no source.' },
@@ -222,20 +222,20 @@ const en: SiteContent = {
   },
   myth: {
     title: 'Why Minos?',
-    body: "In Plato's Gorgias, three judges judge the dead. If the other two are in doubt, Minos has the last word. Here too, the rules and the judge speak first. For an answer that stays uncertain, the last word is yours.",
+    body: 'In Plato’s Gorgias, three judges judge the dead. If the other two are in doubt, Minos has the last word. Here too, the rules and the judge speak first. For an answer that stays uncertain, the last word is yours.',
   },
   modes: {
     title: 'You choose how much say the judge has.',
     items: [
       { name: 'Off', body: 'The judge does not run.' },
       { name: 'Suggest', body: 'The judge suggests, a person decides.' },
-      { name: 'Auto', body: "The judge's results go straight into the verdict." },
+      { name: 'Auto', body: 'The judge’s results go straight into the verdict.' },
     ],
   },
   access: {
     title: 'Access grows step by step',
     steps: ['Import answers collected by hand.', 'Connect to the service API.', 'Move on to deeper records.'],
-    note: "You don't need source code to start. Each new target system needs an integration.",
+    note: 'You don’t need source code to start. Each new target system needs an integration.',
   },
   data: {
     title: 'Answers only go to your own models.',
@@ -248,7 +248,7 @@ const en: SiteContent = {
   credit: {
     photoLabel: 'Photo:',
     edits: 'cropped and retouched.',
-    mural: 'Mural: Carl Rahl and Edward Lebietski, University of Athens.',
+    mural: 'Mural: Carl Rahl and Eduard Lebiedzki, University of Athens.',
   },
 };
 

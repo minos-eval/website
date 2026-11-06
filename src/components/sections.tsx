@@ -30,7 +30,7 @@ export function Hero({ c }: SectionProps) {
 export function Problem({ c }: SectionProps) {
   const { label, title, intro, items, today, approach } = c.problem;
   return (
-    <section className={styles.problem} aria-label={label}>
+    <section className={styles.problem} id="problem" aria-label={label}>
       <h2>{title}</h2>
       <p className={styles.intro}>{intro}</p>
       <div className={styles.columns}>
@@ -112,7 +112,7 @@ export function Myth({ c }: SectionProps) {
 
 export function Modes({ c }: SectionProps) {
   return (
-    <section className={styles.modes}>
+    <section className={styles.modes} id="modes">
       <h2>{c.modes.title}</h2>
       <div className={styles.modeGrid}>
         {c.modes.items.map((item) => (

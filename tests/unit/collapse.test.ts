@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { barHeightFor, collapseFrame, imageWidthFor, layoutFor } from '@/lib/collapse';
+import { barHeightFor, collapseFrame, imageWidthFor, layoutFor, stackedCopyTop } from '@/lib/collapse';
 
 const desktop = { width: 1440, height: 900 };
 const distance = 720;
@@ -37,6 +37,29 @@ describe('collapseFrame', () => {
   test('reduced motion has no in-between frames', () => {
     expect(collapseFrame(0, desktop, { reducedMotion: true }).progress).toBe(0);
     expect(collapseFrame(1, desktop, { reducedMotion: true }).progress).toBe(1);
+  });
+
+  test('reduced motion leaves the hero copy to scroll away by itself', () => {
+    expect(collapseFrame(1, desktop, { reducedMotion: true }).copyOpacity).toBe(1);
+  });
+
+  test('the lower edge dissolves mid-collapse and is gone in the bar', () => {
+    expect(collapseFrame(320, desktop).bottomFadeHeight).toBeGreaterThan(100);
+    expect(collapseFrame(distance, desktop).bottomFadeHeight).toBe(0);
+  });
+
+  test('stacked painting ends where the copy starts, at every scroll position', () => {
+    const phone = { width: 390, height: 844 };
+    const copyTop = stackedCopyTop(phone);
+    for (const scrollY of [0, 100, 220, 300]) {
+      expect(collapseFrame(scrollY, phone).boxHeight).toBeCloseTo(Math.max(64, copyTop - scrollY));
+    }
+  });
+
+  test('short stacked screens keep the copy within the first screen', () => {
+    const landscape = { width: 844, height: 390 };
+    expect(stackedCopyTop(landscape)).toBeCloseTo(234);
+    expect(imageWidthFor(landscape)).toBeCloseTo(325);
   });
 
   test('stacked layout keeps the copy and uses the 64px bar', () => {

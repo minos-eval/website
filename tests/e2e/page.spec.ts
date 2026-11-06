@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-const ids = ['how', 'rule', 'minos', 'access', 'data'];
+const ids = ['problem', 'how', 'rule', 'minos', 'modes', 'access', 'data'];
 
 test('sections render in order', async ({ page }) => {
   await page.goto('/');
