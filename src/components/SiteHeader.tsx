@@ -2,7 +2,6 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { SiteContent } from '@/content/site';
-import { Logo } from './Logo';
 import styles from './SiteHeader.module.css';
 
 const NO_SCRIPT_RULES = `@media (max-width:1023.98px){
@@ -61,9 +60,9 @@ export function SiteHeader({ content }: { content: SiteContent }) {
       <header ref={header} className={styles.header} data-header>
         <a className={styles.brand} href="#top">
           <span className={styles.tile}>
-            <Logo className={styles.logo} />
+            <img className={styles.logo} src="/logo.png" alt="" width={100} height={100} />
           </span>
-          MINOS Evals
+          MINOS
         </a>
         <button
           ref={button}

@@ -39,7 +39,7 @@ export interface SiteContent {
 const tr: SiteContent = {
   locale: 'tr',
   meta: {
-    title: 'MINOS Evals',
+    title: 'MINOS',
     description: 'Kurumsal yapay zekâ asistanınızı kaynak koduna dokunmadan test eden değerlendirme ve izleme katmanı.',
   },
   nav: [
@@ -52,7 +52,7 @@ const tr: SiteContent = {
   menu: { open: 'Menüyü aç', close: 'Menüyü kapat', language: 'Dil', sections: 'Sayfa bölümleri' },
   hero: {
     title: 'İki yargıç kararsız kalırsa, son söz sizin.',
-    lead: 'MINOS Evals, kurumsal yapay zekâ asistanınızı kaynak koduna dokunmadan test eder. Kurallar ve LLM judge puanlar, yalnızca belirsiz kalan cevaplar size gelir.',
+    lead: 'MINOS, kurumsal yapay zekâ asistanınızı kaynak koduna dokunmadan test eder. Kurallar ve LLM judge puanlar, yalnızca belirsiz kalan cevaplar size gelir.',
   },
   problem: {
     label: 'Sorun',
@@ -75,7 +75,7 @@ const tr: SiteContent = {
     ],
     today: 'Bugün test ekipleri soruları hâlâ elle soruyor, cevapları elle notluyor.',
     approach:
-      'MINOS Evals bu sorunu olabildiğince deterministik hâle getirmeye çalışır. Vakalar değişmez revizyonlardır, kod kontrolleri her seferinde aynı çalışır, nihai kararı bir modelin izlenimi değil deterministik bir kural verir.',
+      'MINOS bu sorunu olabildiğince deterministik hâle getirmeye çalışır. Vakalar değişmez revizyonlardır, kod kontrolleri her seferinde aynı çalışır, nihai kararı bir modelin izlenimi değil deterministik bir kural verir.',
   },
   how: {
     title: 'Nasıl çalışır',
@@ -147,7 +147,7 @@ const tr: SiteContent = {
 const en: SiteContent = {
   locale: 'en',
   meta: {
-    title: 'MINOS Evals',
+    title: 'MINOS',
     description: 'An evaluation and monitoring layer that tests your enterprise AI assistant without touching its source code.',
   },
   nav: [
@@ -160,7 +160,7 @@ const en: SiteContent = {
   menu: { open: 'Open menu', close: 'Close menu', language: 'Language', sections: 'Page sections' },
   hero: {
     title: 'When two judges can’t decide, the last word is yours.',
-    lead: 'MINOS Evals tests your enterprise AI assistant without touching its source code. Rules and an LLM judge do the scoring, and only the answers that stay uncertain come to you.',
+    lead: 'MINOS tests your enterprise AI assistant without touching its source code. Rules and an LLM judge do the scoring, and only the answers that stay uncertain come to you.',
   },
   problem: {
     label: 'The problem',
@@ -183,7 +183,7 @@ const en: SiteContent = {
     ],
     today: 'Today, test teams still ask the questions by hand and grade the answers by hand.',
     approach:
-      'MINOS Evals works to make this problem as deterministic as it can. Cases are fixed revisions, code checks run the same way every time, and the final verdict comes from a deterministic rule, not a model’s impression.',
+      'MINOS works to make this problem as deterministic as it can. Cases are fixed revisions, code checks run the same way every time, and the final verdict comes from a deterministic rule, not a model’s impression.',
   },
   how: {
     title: 'How it works',
