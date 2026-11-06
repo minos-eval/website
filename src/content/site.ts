@@ -96,7 +96,7 @@ const tr: SiteContent = {
     statements: [
       'Judge her metrik için geçti, kaldı ya da bilinmiyor yazar ve kanıtını ekler.',
       'Nihai karar bu sonuçlardan deterministik bir kuralla çıkar.',
-      'Kritik kanıt yoksa sonuç “geçti” olmaz, needs_review olur.',
+      'Kritik kanıt yoksa sonuç “geçti” olmaz, needs review olur.',
       'Ölçülemeyen metrik başarısız sayılmaz, hesaba katılmaz.',
     ],
     example: {
@@ -107,7 +107,7 @@ const tr: SiteContent = {
         { label: 'Doğruluk', value: 'Geçti. Referansla uyumlu.' },
         { label: 'Dayanak', value: 'Bilinmiyor. Cevap kaynak göstermedi.' },
       ],
-      verdict: { label: 'Karar', value: 'needs_review. Kritik kanıt yok.' },
+      verdict: { label: 'Karar', value: 'needs review. Kritik kanıt yok.' },
     },
   },
   myth: {
@@ -194,7 +194,7 @@ const en: SiteContent = {
     statements: [
       'The judge writes pass, fail or unknown for each metric and attaches its evidence.',
       'The final verdict comes from these results through a deterministic rule.',
-      'Without critical evidence the result is not “pass”, it becomes needs_review.',
+      'Without critical evidence the result is not “pass”, it becomes needs review.',
       'A metric that can’t be measured is not a failure. It is left out.',
     ],
     example: {
@@ -205,7 +205,7 @@ const en: SiteContent = {
         { label: 'Correctness', value: 'Pass. Matches the reference.' },
         { label: 'Grounding', value: 'Unknown. The answer cited no source.' },
       ],
-      verdict: { label: 'Verdict', value: 'needs_review. No critical evidence.' },
+      verdict: { label: 'Verdict', value: 'needs review. No critical evidence.' },
     },
   },
   myth: {

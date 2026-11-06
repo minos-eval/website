@@ -52,7 +52,7 @@ describe('site content', () => {
 
   test.each(locales)('%s keeps product terms and labels the sample', (locale) => {
     const example = content[locale].rule.example;
-    expect(example.verdict.value).toContain('needs_review');
+    expect(example.verdict.value).toContain('needs review');
     expect(['Örnek', 'Sample']).toContain(example.tag);
   });
 });

@@ -9,8 +9,8 @@ const PHOTO_URL =
 const LICENSE_URL = 'https://creativecommons.org/licenses/by-sa/4.0/';
 
 function inline(text: string): ReactNode[] {
-  return text.split(/(needs_review|Gorgias)/).map((part, index) => {
-    if (part === 'needs_review') return <em key={index}>{part}</em>;
+  return text.split(/(needs review|Gorgias)/).map((part, index) => {
+    if (part === 'needs review') return <em key={index}>{part}</em>;
     if (part === 'Gorgias') return <i key={index}>{part}</i>;
     return part;
   });

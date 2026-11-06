@@ -184,7 +184,7 @@ Colour is rationed the same way. Coral appears only where it carries meaning, so
 A monochrome warm-dark palette taken from the painting's shadows, with one coral accent held in reserve.
 
 ### Primary
-- **Verdict Coral** (`red`): The only interface accent. It marks the step where a human enters, the term needs_review and its verdict line, the underline of the current tab, the keyboard focus ring, and text selection (with the ground as selection text).
+- **Verdict Coral** (`red`): The only interface accent. It marks the step where a human enters, the term needs review and its verdict line, the underline of the current tab, the keyboard focus ring, and text selection (with the ground as selection text).
 
 ### Secondary
 - **Mural Sienna** (`greek`): The giant ΜΙΝΩΣ wordmark only. At 3.46:1 on the ground it is legible at display size and nowhere else, and the wordmark is hidden from screen readers.
@@ -204,7 +204,7 @@ A monochrome warm-dark palette taken from the painting's shadows, with one coral
 Two local tints stay outside the token set and belong to one element each: the hero lead (#e4d7c8) and the credit line over the drapery (#f0dcc9). Do not reuse them elsewhere.
 
 ### Named Rules
-**The Earned Coral Rule.** Coral means a human decides, needs_review, you are here, or keyboard focus. It never decorates a title, a link, or a section. The red in the painting and drapery is picture, not accent, and does not count against this rule.
+**The Earned Coral Rule.** Coral means a human decides, needs review, you are here, or keyboard focus. It never decorates a title, a link, or a section. The red in the painting and drapery is picture, not accent, and does not count against this rule.
 
 **The Sampled Ground Rule.** Every dark on the page is the ground or the ground with alpha. No neutral black, no neutral grey, and no scrim in any other colour.
 
@@ -308,7 +308,7 @@ The signature component. The real painting sits fixed behind the header and coll
 ### Do:
 - **Do** let the real painting or its drapery be the only imagery, and let it dissolve into `ground`.
 - **Do** keep the crop to head, shoulders, and upper chest when the painting is shown large.
-- **Do** spend `red` only on a human step, needs_review, the current tab, focus, and selection.
+- **Do** spend `red` only on a human step, needs review, the current tab, focus, and selection.
 - **Do** draw structure with a 1px `line` rule and leave the rest to spacing.
 - **Do** apply `'FLAR' 100, 'VOLM' 0` to every title and to nothing that is read as text.
 - **Do** keep text at WCAG AA against the ground, at least 4.5:1 for reading sizes.
