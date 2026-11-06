@@ -1,7 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
 
-const tabs = ['Nasıl çalışır', 'Karar kuralı', 'Neden Minos', 'Erişim', 'Veri güvenliği'];
-const nav = (page: Page) => page.getByRole('navigation', { name: 'Sayfa bölümleri' });
+const tabs = ['How it works', 'Decision rule', 'Why Minos', 'Access', 'Data security'];
+const nav = (page: Page) => page.getByRole('navigation', { name: 'Page sections' });
 const centerSection = (page: Page, id: string) =>
   page.evaluate((target) => {
     const section = document.getElementById(target)!;
@@ -18,37 +18,61 @@ test('five tabs in order', async ({ page }) => {
 test('clicking a tab keeps the heading below the bar', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
-  await nav(page).getByRole('link', { name: 'Erişim' }).click();
+  await nav(page).getByRole('link', { name: 'Access' }).click();
   await expect.poll(() => page.evaluate(() => document.querySelector('#access h2')!.getBoundingClientRect().top)).toBeGreaterThan(84);
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(1000);
 });
 
 test('no tab is active at the top of the page', async ({ page }) => {
   await page.goto('/');
-  await expect(nav(page).locator('[aria-current="true"]')).toHaveCount(0);
+  await expect(nav(page).locator('a[aria-current="true"]')).toHaveCount(0);
 });
 
 test('active tab follows the section', async ({ page }) => {
   await page.goto('/');
   await centerSection(page, 'rule');
-  const tab = nav(page).getByRole('link', { name: 'Karar kuralı' });
+  const tab = nav(page).getByRole('link', { name: 'Decision rule' });
   await expect(tab).toHaveAttribute('aria-current', 'true');
   await expect(tab).toHaveCSS('border-bottom-color', 'rgb(255, 95, 109)');
+});
+
+for (const { path, current, other } of [
+  { path: '/', current: 'EN', other: 'TR' },
+  { path: '/tr', current: 'TR', other: 'EN' },
+]) {
+  test(`switcher lists EN then TR and underlines ${current} on ${path}`, async ({ page }) => {
+    await page.goto(path);
+    const group = page.locator('header [role="group"]');
+    await expect(group).toHaveText('EN / TR');
+    const selected = group.locator('[aria-current="true"]');
+    await expect(selected).toHaveText(current);
+    await expect(selected).toHaveCSS('border-bottom-style', 'solid');
+    await expect(selected).toHaveCSS('border-bottom-color', 'rgb(243, 233, 221)');
+    const link = group.getByRole('link', { name: other, exact: true });
+    await expect(link).toHaveCSS('border-bottom-color', 'rgba(0, 0, 0, 0)');
+    await expect(link).toHaveCSS('text-decoration-line', 'none');
+  });
+}
+
+test('english is the default and the root', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
 });
 
 test('language switch keeps the section', async ({ page }) => {
   await page.goto('/');
   await centerSection(page, 'rule');
-  await expect(nav(page).getByRole('link', { name: 'Karar kuralı' })).toHaveAttribute('aria-current', 'true');
-  await nav(page).getByRole('link', { name: 'EN', exact: true }).click();
-  await expect(page).toHaveURL(/\/en#rule$/);
-  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(nav(page).getByRole('link', { name: 'Decision rule' })).toHaveAttribute('aria-current', 'true');
+  await nav(page).getByRole('link', { name: 'TR', exact: true }).click();
+  await expect(page).toHaveURL(/\/tr#rule$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'tr');
 });
 
-test('english page links back to turkish', async ({ page }) => {
-  await page.goto('/en');
-  await page.getByRole('navigation', { name: 'Page sections' }).getByRole('link', { name: 'TR', exact: true }).click();
-  await expect(page.locator('html')).toHaveAttribute('lang', 'tr');
+test('turkish page links back to english', async ({ page }) => {
+  await page.goto('/tr');
+  await page.getByRole('navigation', { name: 'Sayfa bölümleri' }).getByRole('link', { name: 'EN', exact: true }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
 });
 
 test('keyboard reaches the brand, tabs and language', async ({ page }) => {
@@ -58,7 +82,7 @@ test('keyboard reaches the brand, tabs and language', async ({ page }) => {
     await page.keyboard.press('Tab');
     reached.push(await page.evaluate(() => (document.activeElement as HTMLElement).innerText.trim()));
   }
-  expect(reached).toEqual(['MINOS', ...tabs, 'EN']);
+  expect(reached).toEqual(['MINOS', ...tabs, 'TR']);
 });
 
 test.describe('on a phone', () => {
@@ -66,25 +90,25 @@ test.describe('on a phone', () => {
 
   test('menu opens, closes with Escape and returns focus', async ({ page }) => {
     await page.goto('/');
-    const button = page.getByRole('button', { name: 'Menüyü aç' });
-    await expect(nav(page).getByRole('link', { name: 'Erişim' })).toBeHidden();
+    const button = page.getByRole('button', { name: 'Open menu' });
+    await expect(nav(page).getByRole('link', { name: 'Access' })).toBeHidden();
     await expect(button).toHaveAttribute('aria-expanded', 'false');
     await button.click();
-    const close = page.getByRole('button', { name: 'Menüyü kapat' });
+    const close = page.getByRole('button', { name: 'Close menu' });
     await expect(close).toHaveAttribute('aria-expanded', 'true');
-    await expect(nav(page).getByRole('link', { name: 'Erişim' })).toBeVisible();
-    await expect(nav(page).getByRole('link', { name: 'EN', exact: true })).toBeVisible();
+    await expect(nav(page).getByRole('link', { name: 'Access' })).toBeVisible();
+    await expect(nav(page).getByRole('link', { name: 'TR', exact: true })).toBeVisible();
     await page.keyboard.press('Escape');
-    await expect(nav(page).getByRole('link', { name: 'Erişim' })).toBeHidden();
-    await expect(page.getByRole('button', { name: 'Menüyü aç' })).toBeFocused();
+    await expect(nav(page).getByRole('link', { name: 'Access' })).toBeHidden();
+    await expect(page.getByRole('button', { name: 'Open menu' })).toBeFocused();
   });
 
   test('choosing a tab closes the menu and goes to the section', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/');
-    await page.getByRole('button', { name: 'Menüyü aç' }).click();
-    await nav(page).getByRole('link', { name: 'Erişim' }).click();
-    await expect(nav(page).getByRole('link', { name: 'Erişim' })).toBeHidden();
+    await page.getByRole('button', { name: 'Open menu' }).click();
+    await nav(page).getByRole('link', { name: 'Access' }).click();
+    await expect(nav(page).getByRole('link', { name: 'Access' })).toBeHidden();
     await expect(page).toHaveURL(/#access$/);
   });
 
@@ -93,7 +117,7 @@ test.describe('on a phone', () => {
 
     test('tabs stay reachable', async ({ page }) => {
       await page.goto('/');
-      await expect(nav(page).getByRole('link', { name: 'Erişim' })).toBeVisible();
+      await expect(nav(page).getByRole('link', { name: 'Access' })).toBeVisible();
     });
   });
 });

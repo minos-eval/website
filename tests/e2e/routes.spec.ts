@@ -1,13 +1,13 @@
 import { expect, test } from '@playwright/test';
 
-test('tr root uses lang=tr', async ({ page }) => {
+test('root is english and uses lang=en', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('html')).toHaveAttribute('lang', 'tr');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
 });
 
-test('en route uses lang=en', async ({ page }) => {
-  await page.goto('/en');
-  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+test('tr route uses lang=tr', async ({ page }) => {
+  await page.goto('/tr');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'tr');
 });
 
 test('painting assets are served', async ({ request }) => {

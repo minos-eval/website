@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { content, type Locale } from '@/content/site';
+import { content, localePath, type Locale } from '@/content/site';
 
 export function metadataFor(locale: Locale): Metadata {
   const { title, description } = content[locale].meta;
@@ -8,8 +8,8 @@ export function metadataFor(locale: Locale): Metadata {
     title,
     description,
     alternates: {
-      canonical: locale === 'tr' ? '/' : '/en',
-      languages: { tr: '/', en: '/en' },
+      canonical: localePath[locale],
+      languages: { en: localePath.en, tr: localePath.tr, 'x-default': localePath.en },
     },
     openGraph: {
       title,

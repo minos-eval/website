@@ -1,4 +1,9 @@
 export type Locale = 'tr' | 'en';
+
+/** English is the default and lives at the root; Turkish is the extra option. Order is the switcher's order. */
+export const locales: readonly Locale[] = ['en', 'tr'];
+export const localePath: Record<Locale, string> = { en: '/', tr: '/tr' };
+
 export type SectionId = 'how' | 'rule' | 'minos' | 'access' | 'data';
 
 /** Stays null until a publishable address exists. The closing link is not rendered without it. */

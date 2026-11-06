@@ -276,7 +276,7 @@ The component set is small and quiet, and every part is type on a rule. The site
 ### Navigation
 - **Style:** A fixed bar (84px, 64px below 1024px) with the brand left and tabs right, transparent over the hero and painted by the collapsed painting when scrolled.
 - **Tabs:** Cream Nav type with a 2px transparent bottom border. Hover turns the border `soft`, and the current section turns it `red`.
-- **Language switch:** The current language in `soft` as plain text, the other as an underlined cream link, separated by a slash.
+- **Language switch:** EN first (the default, served at `/`), then TR (served at `/tr`), separated by a slash. The current language is cream plain text with a 2px cream bottom border, the same geometry as a tab. The other is a `soft` link with no underline; hover turns it cream with a `soft` border, like a tab.
 - **Mobile:** A 2.75rem menu button opens a full-width list on the ground with a bottom hairline and 1.25rem type. Escape closes it and returns focus. Without JavaScript the links wrap under the brand.
 - **Focus:** Everything focusable takes a 2px `red` outline at a 3px offset.
 

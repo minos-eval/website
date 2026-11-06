@@ -64,13 +64,27 @@
 }
 
 .language {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   color: var(--soft);
   white-space: nowrap;
 }
 
-.language a {
+.option {
+  padding: 0.4rem 0;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+}
+
+a.option:hover {
   color: var(--text);
-  text-underline-offset: 0.2rem;
+  border-bottom-color: var(--soft);
+}
+
+.option[aria-current] {
+  color: var(--text);
+  border-bottom-color: var(--text);
 }
 
 .menuButton {
@@ -120,7 +134,8 @@
     display: flex;
   }
 
-  .tab {
+  .tab,
+  .option {
     padding: 0.5rem 0;
   }
 
