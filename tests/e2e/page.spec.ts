@@ -16,8 +16,12 @@ test('problem shows its points and the determinism line', async ({ page }) => {
     await expect(problem.getByText(title)).toBeVisible();
   }
   await expect(problem.getByText('as deterministic as it can')).toBeVisible();
-  const firstText = await problem.evaluate((section) => section.firstElementChild?.tagName);
-  expect(firstText).toBe('H2');
+  const order = await problem.evaluate((section) =>
+    Array.from(section.children)
+      .slice(0, 2)
+      .map((child) => child.tagName),
+  );
+  expect(order).toEqual(['P', 'H2']);
 });
 
 test('human step is highlighted', async ({ page }) => {
@@ -31,10 +35,11 @@ test('greek word is hidden from screen readers', async ({ page }) => {
   await expect(page.locator('#minos [aria-hidden="true"]')).toHaveText('ΜΙΝΩΣ');
 });
 
-test('contact stays plain until an email exists', async ({ page }) => {
+test('contact shows no placeholder until an email exists', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('footer a[href^="mailto:"]')).toHaveCount(0);
-  await expect(page.getByText('Email address coming soon')).toBeVisible();
+  await expect(page.getByText('Contact us')).toBeVisible();
+  await expect(page.getByText('Email address coming soon')).toHaveCount(0);
 });
 
 test('credit is the last line and links out', async ({ page }) => {
@@ -50,7 +55,7 @@ test('no product screenshots', async ({ page }) => {
   await page.goto('/');
   const sources = await page.locator('img').evaluateAll((images) => images.map((image) => (image as HTMLImageElement).src));
   for (const source of sources) {
-    expect(source).toMatch(/\/art\/minos-/);
+    expect(source).toMatch(/\/art\/minos-|\/logo\.png$/);
   }
 });
 

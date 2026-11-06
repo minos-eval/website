@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { CONTACT_EMAIL, type SiteContent } from '@/content/site';
+import { HowFlow } from './HowFlow';
 import styles from './sections.module.css';
 
 const PHOTO_URL =
@@ -31,11 +32,13 @@ export function Problem({ c }: SectionProps) {
   const { label, title, intro, items, today, approach } = c.problem;
   return (
     <section className={styles.problem} id="problem" aria-label={label}>
+      <p className={styles.eyebrow}>{label}</p>
       <h2>{title}</h2>
       <p className={styles.intro}>{intro}</p>
       <div className={styles.columns}>
-        {items.map((item) => (
+        {items.map((item, index) => (
           <div key={item.title}>
+            <span className={styles.itemNumber}>{String(index + 1).padStart(2, '0')}</span>
             <h3>{item.title}</h3>
             <p>{item.body}</p>
           </div>
@@ -49,20 +52,7 @@ export function Problem({ c }: SectionProps) {
 }
 
 export function How({ c }: SectionProps) {
-  return (
-    <section className={styles.flow} id="how">
-      <h2>{c.how.title}</h2>
-      <ol>
-        {c.how.steps.map((step, index) => (
-          <li key={step.title} className={step.human ? styles.human : undefined}>
-            <span className={styles.number}>{index + 1}</span>
-            <strong>{step.title}</strong>
-            <span className={styles.stepBody}>{step.body}</span>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
+  return <HowFlow title={c.how.title} steps={c.how.steps} />;
 }
 
 export function Rule({ c }: SectionProps) {
@@ -156,12 +146,10 @@ export function Close({ c }: SectionProps) {
     <footer className={styles.footer}>
       <div className={styles.close}>
         <p className={styles.closeTitle}>{c.close.title}</p>
-        {CONTACT_EMAIL ? (
+        {CONTACT_EMAIL && (
           <a className={styles.contact} href={`mailto:${CONTACT_EMAIL}`}>
             {CONTACT_EMAIL}
           </a>
-        ) : (
-          <span className={styles.contact}>{c.close.contactPlaceholder}</span>
         )}
       </div>
       <p className={styles.credit}>

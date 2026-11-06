@@ -4,7 +4,7 @@ export type Locale = 'tr' | 'en';
 export const locales: readonly Locale[] = ['en', 'tr'];
 export const localePath: Record<Locale, string> = { en: '/', tr: '/tr' };
 
-export type SectionId = 'how' | 'rule' | 'minos' | 'access' | 'data';
+export type SectionId = 'problem' | 'how' | 'rule' | 'minos' | 'access' | 'data';
 
 /** Stays null until a publishable address exists. The closing link is not rendered without it. */
 export const CONTACT_EMAIL: string | null = null;
@@ -37,7 +37,7 @@ export interface SiteContent {
   modes: { title: string; items: { name: string; body: string }[] };
   access: { title: string; steps: string[]; note: string };
   data: { title: string; body: string };
-  close: { title: string; contactPlaceholder: string };
+  close: { title: string };
   credit: { photoLabel: string; edits: string; mural: string };
 }
 
@@ -48,6 +48,7 @@ const tr: SiteContent = {
     description: 'Kurumsal yapay zekâ asistanınızı kaynak koduna dokunmadan test eden değerlendirme ve izleme katmanı.',
   },
   nav: [
+    { id: 'problem', label: 'Sorun' },
     { id: 'how', label: 'Nasıl çalışır' },
     { id: 'rule', label: 'Karar kuralı' },
     { id: 'minos', label: 'Neden Minos' },
@@ -139,8 +140,7 @@ const tr: SiteContent = {
     body: 'Bu bir politika metni değil. Koşu başlarken ve her judge çağrısında kodla zorlanır.',
   },
   close: {
-    title: 'Asistanınız için böyle bir değerlendirme kurmak isterseniz yazın.',
-    contactPlaceholder: 'E-posta adresi yakında',
+    title: 'Bize ulaşın',
   },
   credit: {
     photoLabel: 'Fotoğraf:',
@@ -156,6 +156,7 @@ const en: SiteContent = {
     description: 'An evaluation and monitoring layer that tests your enterprise AI assistant without touching its source code.',
   },
   nav: [
+    { id: 'problem', label: 'Problem' },
     { id: 'how', label: 'How it works' },
     { id: 'rule', label: 'Decision rule' },
     { id: 'minos', label: 'Why Minos' },
@@ -247,8 +248,7 @@ const en: SiteContent = {
     body: 'This is not a policy statement. It is enforced in code at the start of a run and on every judge call.',
   },
   close: {
-    title: 'If you want this kind of evaluation for your assistant, write to us.',
-    contactPlaceholder: 'Email address coming soon',
+    title: 'Contact us',
   },
   credit: {
     photoLabel: 'Photo:',
