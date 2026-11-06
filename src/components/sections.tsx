@@ -29,7 +29,7 @@ export function Hero({ c }: SectionProps) {
 }
 
 export function Problem({ c }: SectionProps) {
-  const { label, title, items, today, approach } = c.problem;
+  const { label, title, items, today } = c.problem;
   return (
     <section className={styles.problem} id="problem" aria-label={label}>
       <p className={styles.eyebrow}>{label}</p>
@@ -43,9 +43,7 @@ export function Problem({ c }: SectionProps) {
           </div>
         ))}
       </div>
-      <p className={styles.approach}>
-        {today} {approach}
-      </p>
+      <p className={styles.approach}>{today}</p>
     </section>
   );
 }

@@ -22,10 +22,8 @@ describe('site content', () => {
     expect(content.en.hero.title).toBe('Every AI Must Face Its Judge.');
   });
 
-  test.each(locales)('%s problem has three points and the determinism line', (locale) => {
-    const problem = content[locale].problem;
-    expect(problem.items).toHaveLength(3);
-    expect(problem.approach.toLowerCase()).toContain(locale === 'tr' ? 'deterministik' : 'deterministic');
+  test.each(locales)('%s problem has three points', (locale) => {
+    expect(content[locale].problem.items).toHaveLength(3);
   });
 
   test('en problem copy is the approved text', () => {

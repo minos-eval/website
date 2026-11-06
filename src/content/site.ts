@@ -20,7 +20,6 @@ export interface SiteContent {
     title: string;
     items: { title: string; body: string }[];
     today: string;
-    approach: string;
   };
   how: { title: string; steps: { title: string; body: string; human?: true }[] };
   rule: {
@@ -77,8 +76,6 @@ const tr: SiteContent = {
       },
     ],
     today: 'Bugün test ekipleri soruları hâlâ elle soruyor, cevapları elle notluyor.',
-    approach:
-      'MINOS bu sorunu olabildiğince deterministik hâle getirmeye çalışır. Vakalar değişmez revizyonlardır, kod kontrolleri her seferinde aynı çalışır, nihai kararı bir modelin izlenimi değil deterministik bir kural verir.',
   },
   how: {
     title: 'Nasıl çalışır',
@@ -183,8 +180,6 @@ const en: SiteContent = {
       },
     ],
     today: 'Today, test teams still ask the questions manually and grade the answers by hand.',
-    approach:
-      'MINOS works to make this problem as deterministic as it can. Cases are fixed revisions, code checks run the same way every time, and the final verdict comes from a deterministic rule, not a model’s impression.',
   },
   how: {
     title: 'How it works',

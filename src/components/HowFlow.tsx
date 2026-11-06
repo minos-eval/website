@@ -47,8 +47,8 @@ function rowVars(distance: number, human = false): Record<string, string> {
     '--y': `${offsetRem(distance)}rem`,
     '--s': String(Math.max(0.62, 1 - away * 0.14)),
     '--o': String(rowOpacity(distance, human)),
-    // Small text cannot sit half-faded without failing contrast, so the note switches over in a narrow band.
-    '--b': String(clamp(1 - (away - 0.35) * 6, 0, 1)),
+    // Small text cannot sit half-faded without failing contrast, so only the active row shows its note, at full strength.
+    '--b': away < 0.5 ? '1' : '0',
     '--blur': `${Math.min(away, 3) * 0.8}px`,
   };
 }

@@ -8,14 +8,14 @@ test('sections render in order', async ({ page }) => {
   expect(found).toEqual(ids);
 });
 
-test('problem shows its points and the determinism line', async ({ page }) => {
+test('problem shows its points and closes on the manual-testing line', async ({ page }) => {
   await page.goto('/');
   const problem = page.getByRole('region', { name: 'The problem' });
   await expect(problem.getByRole('heading', { level: 2 })).toBeVisible();
   for (const title of ['Many valid answers', 'Results change between runs', 'Judges are not always right']) {
     await expect(problem.getByText(title)).toBeVisible();
   }
-  await expect(problem.getByText('as deterministic as it can')).toBeVisible();
+  await expect(problem.getByText('Today, test teams still ask the questions manually and grade the answers by hand.', { exact: true })).toBeVisible();
   const order = await problem.evaluate((section) =>
     Array.from(section.children)
       .slice(0, 2)
