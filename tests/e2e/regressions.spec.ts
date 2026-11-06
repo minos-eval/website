@@ -148,6 +148,16 @@ test.describe('the painting', () => {
 test.describe('on a phone', () => {
   test.use({ viewport: { width: 390, height: 844 } });
 
+  test('the eye strip keeps its colour in the bar', async ({ page }) => {
+    await page.goto('/');
+    await scrollTo(page, 3000);
+    await settled(page);
+    await page.addStyleTag({ content: 'header{visibility:hidden}' });
+    const pixels = await regionPixels(page, { x: 200, y: 8, width: 80, height: 48 });
+    const warmth = pixels.reduce((sum, [red, , blue]) => sum + red - blue, 0) / pixels.length;
+    expect(warmth).toBeGreaterThan(90);
+  });
+
   test('the title is never under the painting', async ({ page }) => {
     await page.goto('/');
     for (const top of [0, 100, 220, 300, 420]) {

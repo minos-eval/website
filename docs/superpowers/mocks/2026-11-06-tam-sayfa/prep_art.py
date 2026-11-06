@@ -2,13 +2,13 @@
 
 usage: python3 -I prep_art.py <mural.jpg> <out-dir>
 
-Writes minos-clean.jpg, minos-kumas.jpg and og.jpg. Damage holes are healed by cloning
+Writes minos-clean.jpg, minos-kumas.png and og.jpg. Damage holes are healed by cloning
 neighbouring brushwork through a mask shaped like the hole, so no blurred patch is left.
 """
 import sys
 
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter
 
 src_path, out_dir = sys.argv[1], sys.argv[2]
 image = Image.open(src_path).convert("RGB")
@@ -45,19 +45,37 @@ def heal_specks(picture, threshold):
     return Image.composite(median, picture, soft)
 
 
+def clean_spot(picture, cx, cy, radius, dx, dy):
+    mask = Image.new("L", picture.size, 0)
+    ImageDraw.Draw(mask).ellipse((cx - radius, cy - radius, cx + radius, cy + radius), fill=255)
+    shifted = Image.fromarray(np.roll(np.asarray(picture), shift=(-dy, -dx), axis=(0, 1)))
+    return Image.composite(shifted, picture, mask.filter(ImageFilter.GaussianBlur(3)))
+
+
 clean = heal_specks(image, 205)
 for hole in HOLES:
     clean = heal_hole(clean, *hole)
 clean.save(f"{out_dir}/minos-clean.jpg", quality=92, optimize=True)
 
-drapery = clean.crop((640, 1890, W, H))
-local = np.asarray(drapery.filter(ImageFilter.MedianFilter(size=15))).astype(np.int16)
-lift = np.asarray(drapery).astype(np.int16)[:, :, 1] - local[:, :, 1]
+# Red drapery, kept at native size. A colour matte follows the cloth's own top edge and drops the skin above it.
+band = clean_spot(clean, 1309, 1983, 11, -30, 6).crop((265, 1640, W, H))
+local = band.filter(ImageFilter.MedianFilter(size=15))
+lift = np.asarray(band).astype(np.int16)[:, :, 1] - np.asarray(local).astype(np.int16)[:, :, 1]
 pale = Image.fromarray(((lift > 22) * 255).astype("uint8")).filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.GaussianBlur(1))
-drapery = Image.composite(drapery.filter(ImageFilter.MedianFilter(size=15)), drapery, pale)
-drapery = drapery.resize((1920, round(1920 * drapery.height / drapery.width)), Image.LANCZOS)
-drapery = drapery.filter(ImageFilter.UnsharpMask(radius=3, percent=70, threshold=2))
-drapery.save(f"{out_dir}/minos-kumas.jpg", quality=92, optimize=True)
+band = Image.composite(local, band, pale)
+pixels = np.asarray(band).astype(np.float32)
+cloth = 1 - np.clip((pixels[:, :, 1] / (pixels[:, :, 0] + 1) - 0.36) / 0.09, 0, 1)
+filled = Image.fromarray((cloth * 255).astype("uint8")).filter(ImageFilter.MaxFilter(41)).filter(ImageFilter.MinFilter(41))
+cloth = np.asarray(filled).astype(np.float32) / 255
+region = Image.new("L", band.size, 0)
+ImageDraw.Draw(region).polygon(
+    [(128, 440), (318, 250), (480, 196), (690, 122), (900, 40), (1122, -56), (1122, 440)], fill=255
+)
+region = np.asarray(region.filter(ImageFilter.GaussianBlur(5))).astype(np.float32) / 255
+matte = Image.fromarray((cloth * region * 255).astype("uint8")).filter(ImageFilter.GaussianBlur(2))
+drapery = band.convert("RGBA")
+drapery.putalpha(matte)
+drapery.save(f"{out_dir}/minos-kumas.png", optimize=True)
 
 clean.crop((0, 0, W, 728)).resize((1200, 630), Image.LANCZOS).save(f"{out_dir}/og.jpg", quality=84, optimize=True)
 print("clean", clean.size, "drapery", drapery.size)
