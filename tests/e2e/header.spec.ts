@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 
-const tabs = ['Problem', 'How it works', 'Decision rule', 'Why Minos', 'Data security'];
+const tabs = ['Problem', 'How it works', 'Decision rule', 'Why Minos', 'Data privacy'];
 const nav = (page: Page) => page.getByRole('navigation', { name: 'Page sections' });
 const centerSection = (page: Page, id: string) =>
   page.evaluate((target) => {
@@ -18,7 +18,7 @@ test('five tabs in order', async ({ page }) => {
 test('clicking a tab keeps the heading below the bar', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
-  await nav(page).getByRole('link', { name: 'Data security' }).click();
+  await nav(page).getByRole('link', { name: 'Data privacy' }).click();
   await expect.poll(() => page.evaluate(() => document.querySelector('#data h2')!.getBoundingClientRect().top)).toBeGreaterThan(84);
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(1000);
 });
@@ -91,15 +91,15 @@ test.describe('on a phone', () => {
   test('menu opens, closes with Escape and returns focus', async ({ page }) => {
     await page.goto('/');
     const button = page.getByRole('button', { name: 'Open menu' });
-    await expect(nav(page).getByRole('link', { name: 'Data security' })).toBeHidden();
+    await expect(nav(page).getByRole('link', { name: 'Data privacy' })).toBeHidden();
     await expect(button).toHaveAttribute('aria-expanded', 'false');
     await button.click();
     const close = page.getByRole('button', { name: 'Close menu' });
     await expect(close).toHaveAttribute('aria-expanded', 'true');
-    await expect(nav(page).getByRole('link', { name: 'Data security' })).toBeVisible();
+    await expect(nav(page).getByRole('link', { name: 'Data privacy' })).toBeVisible();
     await expect(nav(page).getByRole('link', { name: 'TR', exact: true })).toBeVisible();
     await page.keyboard.press('Escape');
-    await expect(nav(page).getByRole('link', { name: 'Data security' })).toBeHidden();
+    await expect(nav(page).getByRole('link', { name: 'Data privacy' })).toBeHidden();
     await expect(page.getByRole('button', { name: 'Open menu' })).toBeFocused();
   });
 
@@ -107,8 +107,8 @@ test.describe('on a phone', () => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/');
     await page.getByRole('button', { name: 'Open menu' }).click();
-    await nav(page).getByRole('link', { name: 'Data security' }).click();
-    await expect(nav(page).getByRole('link', { name: 'Data security' })).toBeHidden();
+    await nav(page).getByRole('link', { name: 'Data privacy' }).click();
+    await expect(nav(page).getByRole('link', { name: 'Data privacy' })).toBeHidden();
     await expect(page).toHaveURL(/#data$/);
   });
 
@@ -117,7 +117,7 @@ test.describe('on a phone', () => {
 
     test('tabs stay reachable', async ({ page }) => {
       await page.goto('/');
-      await expect(nav(page).getByRole('link', { name: 'Data security' })).toBeVisible();
+      await expect(nav(page).getByRole('link', { name: 'Data privacy' })).toBeVisible();
     });
   });
 });

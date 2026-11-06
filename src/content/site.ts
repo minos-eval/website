@@ -49,7 +49,7 @@ const tr: SiteContent = {
     { id: 'how', label: 'Nasıl çalışır' },
     { id: 'rule', label: 'Karar kuralı' },
     { id: 'minos', label: 'Neden Minos' },
-    { id: 'data', label: 'Veri güvenliği' },
+    { id: 'data', label: 'Veri gizliliği' },
   ],
   menu: { open: 'Menüyü aç', close: 'Menüyü kapat', language: 'Dil', sections: 'Sayfa bölümleri' },
   hero: {
@@ -123,8 +123,8 @@ const tr: SiteContent = {
     ],
   },
   data: {
-    title: 'Cevaplar yalnızca sizin modellerinize gider.',
-    body: 'Bu bir politika metni değil. Koşu başlarken ve her judge çağrısında kodla zorlanır.',
+    title: 'Kaynak kodunuza hiç ihtiyacımız yok.',
+    body: 'MINOS asistanınızla endpoint’i üzerinden konuşur. Kodunuzda hiçbir şey değişmez, hiçbir kod paylaşılmaz.',
   },
   close: {
     title: 'Bize ulaşın',
@@ -147,7 +147,7 @@ const en: SiteContent = {
     { id: 'how', label: 'How it works' },
     { id: 'rule', label: 'Decision rule' },
     { id: 'minos', label: 'Why Minos' },
-    { id: 'data', label: 'Data security' },
+    { id: 'data', label: 'Data privacy' },
   ],
   menu: { open: 'Open menu', close: 'Close menu', language: 'Language', sections: 'Page sections' },
   hero: {
@@ -221,8 +221,8 @@ const en: SiteContent = {
     ],
   },
   data: {
-    title: 'Answers only go to your own models.',
-    body: 'This is not a policy statement. It is enforced in code at the start of a run and on every judge call.',
+    title: 'We never need your source code.',
+    body: 'MINOS talks to your assistant through its endpoint. Nothing in your code changes, and no code has to be shared.',
   },
   close: {
     title: 'Contact us',
