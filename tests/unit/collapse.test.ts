@@ -78,6 +78,7 @@ describe('collapseFrame', () => {
   });
 
   test('image stays near its source width on very wide screens', () => {
-    expect(imageWidthFor({ width: 2560, height: 1440 })).toBe(1200);
+    expect(imageWidthFor({ width: 2560, height: 1440 })).toBe(1920);
+    expect(imageWidthFor({ width: 3840, height: 2160 })).toBe(2000);
   });
 });

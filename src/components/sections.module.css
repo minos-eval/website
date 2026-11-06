@@ -58,7 +58,7 @@
   position: absolute;
   z-index: 6;
   top: clamp(7rem, 19vh, 11rem);
-  left: calc(min(75vw, 75rem) * 0.837);
+  left: calc(min(75vw, 125rem) * 0.837);
   right: var(--gutter);
   max-width: 35rem;
   opacity: var(--hero-copy-opacity, 1);

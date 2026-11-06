@@ -43,7 +43,7 @@ export function stackedCopyTop(viewport: Viewport): number {
 
 export function imageWidthFor(viewport: Viewport): number {
   return layoutFor(viewport.width) === 'wide'
-    ? Math.min(0.75 * viewport.width, 1200)
+    ? Math.min(0.75 * viewport.width, 2000)
     : stackedCopyTop(viewport) / STACKED_IMAGE_FIT;
 }
 

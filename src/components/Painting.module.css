@@ -17,7 +17,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: min(75vw, 75rem);
+  width: min(75vw, 125rem);
   max-width: none;
   height: auto;
   transform: translate(-6.48%, -1.48%);
