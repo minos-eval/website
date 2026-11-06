@@ -182,7 +182,7 @@ const en: SiteContent = {
         body: 'LLM-as-a-judge scales review, but its decisions do not always agree with human experts. A judge that is never checked becomes a hidden risk.',
       },
     ],
-    today: 'Today, test teams still ask the questions by hand and grade the answers by hand.',
+    today: 'Today, test teams still ask the questions manually and grade the answers by hand.',
     approach:
       'MINOS works to make this problem as deterministic as it can. Cases are fixed revisions, code checks run the same way every time, and the final verdict comes from a deterministic rule, not a model’s impression.',
   },
