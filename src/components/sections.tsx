@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { CONTACT_EMAIL, type SiteContent } from '@/content/site';
+import { HowFlow } from './HowFlow';
 import styles from './sections.module.css';
 
 const PHOTO_URL =
@@ -51,20 +52,7 @@ export function Problem({ c }: SectionProps) {
 }
 
 export function How({ c }: SectionProps) {
-  return (
-    <section className={styles.flow} id="how">
-      <h2>{c.how.title}</h2>
-      <ol>
-        {c.how.steps.map((step, index) => (
-          <li key={step.title} className={step.human ? styles.human : undefined}>
-            <span className={styles.number}>{index + 1}</span>
-            <strong>{step.title}</strong>
-            <span className={styles.stepBody}>{step.body}</span>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
+  return <HowFlow title={c.how.title} steps={c.how.steps} />;
 }
 
 export function Rule({ c }: SectionProps) {
