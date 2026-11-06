@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import type { SiteContent } from '@/content/site';
+import { Fragment, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { localePath, locales, type SiteContent } from '@/content/site';
 import styles from './SiteHeader.module.css';
 
 const NO_SCRIPT_RULES = `@media (max-width:1023.98px){
@@ -50,7 +50,6 @@ export function SiteHeader({ content }: { content: SiteContent }) {
   }, [open]);
 
   const hash = active ? `#${active}` : '';
-  const otherLocaleHref = `${locale === 'tr' ? '/en' : '/'}${hash}`;
 
   return (
     <>
@@ -90,15 +89,20 @@ export function SiteHeader({ content }: { content: SiteContent }) {
             </a>
           ))}
           <span className={styles.language} role="group" aria-label={menu.language}>
-            {locale === 'tr' ? (
-              <>
-                <span>TR</span> / <a href={otherLocaleHref} lang="en">EN</a>
-              </>
-            ) : (
-              <>
-                <a href={otherLocaleHref} lang="tr">TR</a> / <span>EN</span>
-              </>
-            )}
+            {locales.map((option, index) => (
+              <Fragment key={option}>
+                {index > 0 && ' / '}
+                {option === locale ? (
+                  <span className={styles.option} aria-current="true">
+                    {option.toUpperCase()}
+                  </span>
+                ) : (
+                  <a className={styles.option} href={`${localePath[option]}${hash}`} lang={option}>
+                    {option.toUpperCase()}
+                  </a>
+                )}
+              </Fragment>
+            ))}
           </span>
         </nav>
       </header>

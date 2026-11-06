@@ -30,7 +30,7 @@ async function scrollPositions(page: Page, url: string) {
 }
 
 test.describe('arriving at a section', () => {
-  for (const url of ['/#access', '/en#rule']) {
+  for (const url of ['/#access', '/tr#rule']) {
     test(`${url} does not glide through the hero`, async ({ page }) => {
       const positions = await scrollPositions(page, url);
       const target = positions[positions.length - 1];
@@ -46,9 +46,9 @@ test.describe('arriving at a section', () => {
   test('language switch lands with the section in view', async ({ page }) => {
     await page.goto('/#rule');
     await page.waitForFunction(() => window.scrollY > 500);
-    await expect(page.getByRole('link', { name: 'Karar kuralı' })).toHaveAttribute('aria-current', 'true');
-    await page.getByRole('link', { name: 'EN', exact: true }).click();
-    await expect(page).toHaveURL(/\/en#rule$/);
+    await expect(page.getByRole('link', { name: 'Decision rule' })).toHaveAttribute('aria-current', 'true');
+    await page.getByRole('link', { name: 'TR', exact: true }).click();
+    await expect(page).toHaveURL(/\/tr#rule$/);
     await expect.poll(async () => (await rect(page, '#rule')).top).toBeLessThan(400);
   });
 
@@ -57,8 +57,8 @@ test.describe('arriving at a section', () => {
       await page.goto(`/#${id}`);
       await page.waitForFunction(() => window.scrollY > 500);
       await settled(page);
-      await page.getByRole('link', { name: 'EN', exact: true }).click();
-      await expect(page).toHaveURL(new RegExp(`/en#${id}$`));
+      await page.getByRole('link', { name: 'TR', exact: true }).click();
+      await expect(page).toHaveURL(new RegExp(`/tr#${id}$`));
     });
   }
 });
@@ -192,8 +192,8 @@ test('reduced motion keeps the first screen readable after a small scroll', asyn
 test('the mobile menu stays reachable on a very short screen', async ({ page }) => {
   await page.setViewportSize({ width: 568, height: 320 });
   await page.goto('/');
-  await page.getByRole('button', { name: 'Menüyü aç' }).click();
-  const language = page.getByRole('link', { name: 'EN', exact: true });
+  await page.getByRole('button', { name: 'Open menu' }).click();
+  const language = page.getByRole('link', { name: 'TR', exact: true });
   await language.scrollIntoViewIfNeeded();
   await expect(language).toBeInViewport({ ratio: 1 });
 });
@@ -201,6 +201,6 @@ test('the mobile menu stays reachable on a very short screen', async ({ page }) 
 test('the footer stops growing with the rest of the page on very wide screens', async ({ page }) => {
   await page.setViewportSize({ width: 2560, height: 1440 });
   await page.goto('/');
-  const footerText = await page.getByText('Bize ulaşın').evaluate((element) => element.getBoundingClientRect().right);
+  const footerText = await page.getByText('Contact us').evaluate((element) => element.getBoundingClientRect().right);
   expect(footerText).toBeLessThanOrEqual(2160);
 });

@@ -1,4 +1,9 @@
 export type Locale = 'tr' | 'en';
+
+/** English is the default and lives at the root; Turkish is the extra option. Order is the switcher's order. */
+export const locales: readonly Locale[] = ['en', 'tr'];
+export const localePath: Record<Locale, string> = { en: '/', tr: '/tr' };
+
 export type SectionId = 'problem' | 'how' | 'rule' | 'minos' | 'access' | 'data';
 
 /** Stays null until a publishable address exists. The closing link is not rendered without it. */
@@ -52,8 +57,8 @@ const tr: SiteContent = {
   ],
   menu: { open: 'Menüyü aç', close: 'Menüyü kapat', language: 'Dil', sections: 'Sayfa bölümleri' },
   hero: {
-    title: 'İki yargıç kararsız kalırsa, son söz sizin.',
-    lead: 'MINOS, kurumsal yapay zekâ asistanınızı kaynak koduna dokunmadan test eder. Kurallar ve LLM judge puanlar, yalnızca belirsiz kalan cevaplar size gelir.',
+    title: 'Her yapay zekâ yargıcıyla yüzleşmek zorundadır.',
+    lead: 'Bir yapay zekâ aracını değerlendirmek, sıradan yazılımı test etmekten daha zordur. MINOS, test ekibinize bunu kaynak koda ihtiyaç duymadan, net ve tekrarlanabilir şekilde yapmanın yolunu sunar.',
   },
   problem: {
     label: 'Sorun',
@@ -160,8 +165,8 @@ const en: SiteContent = {
   ],
   menu: { open: 'Open menu', close: 'Close menu', language: 'Language', sections: 'Page sections' },
   hero: {
-    title: 'When two judges can’t decide, the last word is yours.',
-    lead: 'MINOS tests your enterprise AI assistant without touching its source code. Rules and an LLM judge do the scoring, and only the answers that stay uncertain come to you.',
+    title: 'Every AI Must Face Its Judge.',
+    lead: 'Judging an AI tool is harder than testing ordinary software. MINOS gives your test team a clear, repeatable way to evaluate it, without needing its source code.',
   },
   problem: {
     label: 'The problem',

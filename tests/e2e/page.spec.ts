@@ -10,12 +10,12 @@ test('sections render in order', async ({ page }) => {
 
 test('problem shows its points and the determinism line', async ({ page }) => {
   await page.goto('/');
-  const problem = page.getByRole('region', { name: 'Sorun' });
+  const problem = page.getByRole('region', { name: 'The problem' });
   await expect(problem.getByRole('heading', { level: 2 })).toBeVisible();
-  for (const title of ['Birden çok geçerli cevap', 'Sonuçlar koşudan koşuya değişir', 'Judge her zaman haklı değildir']) {
+  for (const title of ['Many valid answers', 'Results change between runs', 'Judges are not always right']) {
     await expect(problem.getByText(title)).toBeVisible();
   }
-  await expect(problem.getByText('deterministik hâle getirmeye')).toBeVisible();
+  await expect(problem.getByText('as deterministic as it can')).toBeVisible();
   const order = await problem.evaluate((section) =>
     Array.from(section.children)
       .slice(0, 2)
@@ -38,8 +38,8 @@ test('greek word is hidden from screen readers', async ({ page }) => {
 test('contact shows no placeholder until an email exists', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('footer a[href^="mailto:"]')).toHaveCount(0);
-  await expect(page.getByText('Bize ulaşın')).toBeVisible();
-  await expect(page.getByText('E-posta adresi yakında')).toHaveCount(0);
+  await expect(page.getByText('Contact us')).toBeVisible();
+  await expect(page.getByText('Email address coming soon')).toHaveCount(0);
 });
 
 test('credit is the last line and links out', async ({ page }) => {

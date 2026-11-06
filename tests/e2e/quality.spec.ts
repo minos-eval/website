@@ -3,8 +3,8 @@ import { expect, test } from '@playwright/test';
 import { content } from '../../src/content/site';
 
 const pages = [
-  { path: '/', locale: 'tr' },
-  { path: '/en', locale: 'en' },
+  { path: '/', locale: 'en' },
+  { path: '/tr', locale: 'tr' },
 ] as const;
 
 for (const { path, locale } of pages) {

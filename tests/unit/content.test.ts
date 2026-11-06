@@ -15,11 +15,11 @@ describe('site content', () => {
   });
 
   test('tr hero copy is the approved line', () => {
-    expect(content.tr.hero.title).toBe('İki yargıç kararsız kalırsa, son söz sizin.');
+    expect(content.tr.hero.title).toBe('Her yapay zekâ yargıcıyla yüzleşmek zorundadır.');
   });
 
   test('en hero copy is the approved line', () => {
-    expect(content.en.hero.title).toBe('When two judges can’t decide, the last word is yours.');
+    expect(content.en.hero.title).toBe('Every AI Must Face Its Judge.');
   });
 
   test.each(locales)('%s problem has three points and the determinism line', (locale) => {
