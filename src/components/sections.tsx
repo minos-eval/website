@@ -1,4 +1,5 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
+import { withBase } from '@/lib/base-path';
 import { CONTACT_EMAIL, type SiteContent } from '@/content/site';
 import { HowFlow } from './HowFlow';
 import styles from './sections.module.css';
@@ -124,7 +125,7 @@ export function Data({ c }: SectionProps) {
 
 export function Close({ c }: SectionProps) {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} style={{ '--kumas': `url(${withBase('/art/minos-kumas.webp')})` } as CSSProperties}>
       <div className={styles.close}>
         <p className={styles.closeTitle}>{c.close.title}</p>
         {CONTACT_EMAIL && (

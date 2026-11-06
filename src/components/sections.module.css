@@ -55,7 +55,7 @@
   position: absolute;
   z-index: 6;
   top: clamp(7rem, 19vh, 11rem);
-  left: calc(min(75vw, 75rem) * 0.837);
+  left: calc(min(75vw, 125rem) * 0.837);
   right: var(--gutter);
   max-width: 35rem;
   opacity: var(--hero-copy-opacity, 1);
@@ -478,7 +478,7 @@
   height: max(39.2vw, 22rem);
   background:
     linear-gradient(0deg, rgb(20 12 7 / 0.5), rgb(20 12 7 / 0.1) 70%),
-    url('/art/minos-kumas.webp') right bottom / cover no-repeat;
+    var(--kumas) right bottom / cover no-repeat;
   -webkit-mask-image: linear-gradient(0deg, #000 58%, transparent 100%);
   mask-image: linear-gradient(0deg, #000 58%, transparent 100%);
 }
