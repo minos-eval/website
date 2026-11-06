@@ -8,7 +8,7 @@ type Step = { title: string; body: string; human?: true };
 /** The wheel needs room for a three-column row and is skipped for people who ask for less motion. Keep in sync with sections.module.css. */
 const WHEEL_QUERY = '(min-width: 1100px) and (prefers-reduced-motion: no-preference)';
 /** Scroll distance, in viewport heights, that moves the wheel by one step. */
-const SCROLL_PER_STEP = 0.5;
+const SCROLL_PER_STEP = 0.3;
 
 /** Without JavaScript the rows cannot move, so the page keeps the plain list. */
 const NO_SCRIPT_RULES = `@media (min-width:1100px){
