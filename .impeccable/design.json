@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T12:59:27+00:00",
+  "title": "Design System: MINOS Evals",
+  "extensions": {
+    "colorMeta": {
+      "red": {
+        "role": "primary",
+        "displayName": "Verdict Coral",
+        "canonical": "#ff5f6d",
+        "tonalRamp": [
+          "#1d0103",
+          "#4d000f",
+          "#7e0421",
+          "#b50833",
+          "#de4053",
+          "#fe717a",
+          "#fdb3b3",
+          "#fee9e8"
+        ]
+      },
+      "greek": {
+        "role": "secondary",
+        "displayName": "Mural Sienna",
+        "canonical": "#8f5c39",
+        "tonalRamp": [
+          "#130803",
+          "#381d0a",
+          "#613514",
+          "#865330",
+          "#a97551",
+          "#cc9877",
+          "#e2c2ae",
+          "#f6ece6"
+        ]
+      },
+      "tile": {
+        "role": "tertiary",
+        "displayName": "Tile White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "logo-black": {
+        "role": "tertiary",
+        "displayName": "Labrys Black",
+        "canonical": "#1b1714",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#272423",
+          "#45413e",
+          "#65605c",
+          "#86817d",
+          "#a9a4a0",
+          "#cbc8c6",
+          "#efeeed"
+        ]
+      },
+      "logo-red": {
+        "role": "tertiary",
+        "displayName": "Labrys Red",
+        "canonical": "#8f2a22",
+        "tonalRamp": [
+          "#190503",
+          "#460f0b",
+          "#781a15",
+          "#a13b31",
+          "#c75e51",
+          "#ea8477",
+          "#f6b7ae",
+          "#fee9e6"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Mural Shadow",
+        "canonical": "#140c07",
+        "tonalRamp": [
+          "#0d0b09",
+          "#292420",
+          "#49403a",
+          "#6a5f58",
+          "#8b8079",
+          "#aea39c",
+          "#cec8c3",
+          "#f0eeed"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Limewash Cream",
+        "canonical": "#f3e9dd",
+        "tonalRamp": [
+          "#0d0b09",
+          "#29241f",
+          "#484138",
+          "#686055",
+          "#8a8176",
+          "#aca499",
+          "#cdc8c2",
+          "#f0eeec"
+        ]
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Worn Plaster",
+        "canonical": "#cbbcaa",
+        "tonalRamp": [
+          "#0d0b07",
+          "#2b241b",
+          "#4b4032",
+          "#6c5f4f",
+          "#8e806f",
+          "#b0a392",
+          "#d0c8be",
+          "#f1eeeb"
+        ]
+      },
+      "dim": {
+        "role": "neutral",
+        "displayName": "Dust Taupe",
+        "canonical": "#a08f7e",
+        "tonalRamp": [
+          "#0e0a07",
+          "#2c231b",
+          "#4d3f31",
+          "#6e5e4e",
+          "#907f6e",
+          "#b2a292",
+          "#d1c7bd",
+          "#f1eeeb"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Umber Hairline",
+        "canonical": "#33241a",
+        "tonalRamp": [
+          "#0e0a08",
+          "#2c231d",
+          "#4e3e34",
+          "#6f5d52",
+          "#917e72",
+          "#b3a195",
+          "#d2c7c0",
+          "#f1eeeb"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Umber Rule",
+        "canonical": "#4a3a2e",
+        "tonalRamp": [
+          "#0e0a08",
+          "#2c231c",
+          "#4e3f33",
+          "#6f5d51",
+          "#917e71",
+          "#b3a194",
+          "#d2c7bf",
+          "#f1eeeb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display-greek": {
+        "displayName": "Display Greek",
+        "purpose": "The ΜΙΝΩΣ wordmark, one use per page."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "The page title, beside the painting's gaze."
+      },
+      "headline-lg": {
+        "displayName": "Headline Large",
+        "purpose": "Section statements that stand alone as full sentences."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles that lead a list or grid, and the closing line."
+      },
+      "title-lg": {
+        "displayName": "Title Large",
+        "purpose": "Names in a set of equal options, and short section titles beside body text."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Step names in a sequence."
+      },
+      "title-sm": {
+        "displayName": "Title Small",
+        "purpose": "Column headings over short body text."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "Large unflared reading sentences that carry an argument."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The opening paragraph."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default reading text."
+      },
+      "body-sm": {
+        "displayName": "Body Small",
+        "purpose": "Column, step, and ledger text."
+      },
+      "brand": {
+        "displayName": "Brand",
+        "purpose": "The product name beside the tile."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Tabs and the language switch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "The sample tag only, in sentence case."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Image credit only."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "painting-collapse",
+        "value": "scroll-linked, linear in scroll position, complete at 0.8 viewport heights (wide) or start height minus bar height (stacked)",
+        "purpose": "The one signature motion: the painting shrinks into the menu bar. No easing or duration of its own."
+      },
+      {
+        "name": "painting-end-scale",
+        "value": "0.78 wide, 0.62 stacked",
+        "purpose": "Painting scale when docked in the bar."
+      },
+      {
+        "name": "copy-fade",
+        "value": "progress 0 to about 0.36, wide layouts only",
+        "purpose": "Fades the hero copy out as the painting moves."
+      },
+      {
+        "name": "bar-shade-fade",
+        "value": "progress 0.4 to 0.9",
+        "purpose": "Fades in the shade behind the brand."
+      },
+      {
+        "name": "bar-ground-fade",
+        "value": "progress 0.55 to 0.85",
+        "purpose": "Fades in the opaque ground of the menu bar."
+      },
+      {
+        "name": "anchor-scroll",
+        "value": "scroll-behavior: smooth, after load, only with prefers-reduced-motion: no-preference",
+        "purpose": "Tab jumps. Not applied to the browser's initial jump to a hash."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "progress snaps to 0 at the top and 1 otherwise",
+        "purpose": "Shows hero or docked bar with no intermediate frames."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stacked",
+        "value": "1023.98px"
+      },
+      {
+        "name": "compact",
+        "value": "1279.98px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Section Tabs",
+      "kind": "nav",
+      "refersTo": "tab",
+      "description": "Fixed-bar section links. Hover underlines in soft, the current section underlines in coral.",
+      "html": "<nav class=\"ds-tabs\" aria-label=\"Sections\"><a class=\"ds-tab\" href=\"#how\">How it works</a><a class=\"ds-tab\" href=\"#rule\" aria-current=\"true\">Decision rule</a><a class=\"ds-tab\" href=\"#minos\">Why Minos</a></nav>",
+      "css": ".ds-tabs { display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 2rem); background: var(--ground); font-family: var(--font-commissioner), system-ui, sans-serif; font-size: 0.9375rem; font-weight: 520; } .ds-tab { padding: 0.4rem 0; border-bottom: 2px solid transparent; color: var(--text); text-decoration: none; } .ds-tab:hover { border-bottom-color: var(--soft); } .ds-tab[aria-current] { border-bottom-color: var(--red); } .ds-tab:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Language Switch",
+      "kind": "nav",
+      "refersTo": "tab",
+      "description": "The current language as soft plain text, the other as an underlined cream link.",
+      "html": "<span class=\"ds-language\" role=\"group\" aria-label=\"Language\"><span>TR</span> / <a href=\"/en\" lang=\"en\">EN</a></span>",
+      "css": ".ds-language { color: var(--soft); white-space: nowrap; font-family: var(--font-commissioner), system-ui, sans-serif; font-size: 0.9375rem; font-weight: 520; } .ds-language a { color: var(--text); text-underline-offset: 0.2rem; } .ds-language a:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Brand Lockup",
+      "kind": "custom",
+      "refersTo": "brand-tile",
+      "description": "The logo on its white tile beside the product name. The logo drawing is provisional, the tile is a brand commitment.",
+      "html": "<a class=\"ds-brand\" href=\"#top\"><span class=\"ds-brand-tile\"><svg viewBox=\"0 0 32 32\" aria-hidden=\"true\"><path d=\"M14.4 5.2C10.4 7 6.4 7 2 5.6c2.5 6.6 2.5 14.2 0 20.8 4.4-1.4 8.4-1.4 12.4.4z\" fill=\"#1b1714\"/><path d=\"M17.6 5.2c4 1.8 8 1.8 12.4.4-2.5 6.6-2.5 14.2 0 20.8-4.4-1.4-8.4-1.4-12.4.4z\" fill=\"#8f2a22\"/><rect x=\"15.1\" y=\"2\" width=\"1.8\" height=\"28\" rx=\".9\" fill=\"#1b1714\"/></svg></span>MINOS Evals</a>",
+      "css": ".ds-brand { display: flex; align-items: center; gap: 0.75rem; color: var(--text); font-family: var(--font-commissioner), system-ui, sans-serif; font-size: 1rem; font-weight: 650; text-decoration: none; } .ds-brand-tile { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 0.45rem; background: #fff; } .ds-brand-tile svg { width: 1.625rem; height: 1.625rem; } .ds-brand:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Menu Button",
+      "kind": "button",
+      "refersTo": "menu-button",
+      "description": "The stacked-layout menu control, the only icon in the system and the only button.",
+      "html": "<button class=\"ds-menu-button\" type=\"button\" aria-label=\"Open menu\" aria-expanded=\"false\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 8h16M4 16h16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg></button>",
+      "css": ".ds-menu-button { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 0; background: none; color: var(--text); cursor: pointer; } .ds-menu-button svg { width: 1.5rem; height: 1.5rem; } .ds-menu-button:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Ruled Columns",
+      "kind": "card",
+      "refersTo": "ruled-column",
+      "description": "Equal columns opened by a hairline. This is what the system uses in place of cards.",
+      "html": "<div class=\"ds-columns\"><div><h3>More than one valid answer</h3><p>Outputs are open-ended, so exact matching misses real errors.</p></div><div><h3>Results change between runs</h3><p>One run is not evidence.</p></div><div><h3>The judge is not always right</h3><p>An unchecked judge is a hidden risk.</p></div></div>",
+      "css": ".ds-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; font-family: var(--font-commissioner), system-ui, sans-serif; } .ds-columns > div { padding-top: 1.25rem; border-top: 1px solid var(--line); } .ds-columns h3 { margin: 0 0 0.75rem; color: var(--text); font-size: 1.5rem; font-variation-settings: 'FLAR' 100, 'VOLM' 0; font-weight: 540; letter-spacing: -0.012em; line-height: 1.2; } .ds-columns p { margin: 0; color: var(--soft); font-size: 1.0625rem; line-height: 1.55; }"
+    },
+    {
+      "name": "Flow Steps",
+      "kind": "custom",
+      "refersTo": "flow-step",
+      "description": "A hairline-split sequence. Only the step where a human acts turns coral.",
+      "html": "<ol class=\"ds-flow\"><li><span class=\"ds-flow-number\">4</span><strong>Score</strong><span class=\"ds-flow-body\">Code checks and the judge score the answer.</span></li><li class=\"ds-flow-human\"><span class=\"ds-flow-number\">5</span><strong>Human review</strong><span class=\"ds-flow-body\">People see only what stayed uncertain.</span></li></ol>",
+      "css": ".ds-flow { margin: 0; padding: 0; list-style: none; font-family: var(--font-commissioner), system-ui, sans-serif; } .ds-flow li { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr) minmax(0, 25rem); gap: 0.5rem; align-items: baseline; padding: 1.5rem 0; border-top: 1px solid var(--line); } .ds-flow li:last-child { border-bottom: 1px solid var(--line); } .ds-flow strong { color: var(--text); font-size: 1.875rem; font-variation-settings: 'FLAR' 100, 'VOLM' 0; font-weight: 530; letter-spacing: -0.012em; line-height: 1.15; } .ds-flow-number { color: var(--dim); font-size: 1rem; font-variant-numeric: tabular-nums; } .ds-flow-body { color: var(--soft); font-size: 1.0625rem; } .ds-flow-human strong { color: var(--red); }"
+    },
+    {
+      "name": "Sample Ledger",
+      "kind": "custom",
+      "refersTo": "ledger-row",
+      "description": "A worked example under an outlined sample tag, with hairline rows and a coral verdict.",
+      "html": "<div class=\"ds-ledger\"><span class=\"ds-ledger-tag\">Sample</span><dl><div><dt>Answer</dt><dd>30 days.</dd></div><div><dt>Grounding</dt><dd>Unknown. The answer cited no source.</dd></div><div><dt>Verdict</dt><dd class=\"ds-ledger-verdict\">needs_review. No critical evidence.</dd></div></dl></div>",
+      "css": ".ds-ledger { color: var(--text); font-family: var(--font-commissioner), system-ui, sans-serif; font-size: 1.0625rem; font-weight: 420; line-height: 1.55; } .ds-ledger-tag { display: inline-block; margin-bottom: 1rem; padding: 0.05rem 0.5rem; border: 1px solid #4a3a2e; border-radius: 0.3rem; color: var(--soft); font-size: 0.875rem; font-weight: 550; } .ds-ledger dl { margin: 0; } .ds-ledger dl > div { display: grid; grid-template-columns: 7rem 1fr; gap: 0.5rem; padding: 0.8rem 0; border-top: 1px solid var(--line); } .ds-ledger dt { color: var(--dim); } .ds-ledger dd { margin: 0; } .ds-ledger-verdict { color: var(--red); font-weight: 560; }"
+    },
+    {
+      "name": "Access Stairs",
+      "kind": "custom",
+      "refersTo": "title-lg",
+      "description": "Stepped indents let the list itself draw the staircase of growing access.",
+      "html": "<ol class=\"ds-stairs\"><li>Hand-collected answers</li><li>Service API</li><li>Deeper internal records</li></ol>",
+      "css": ".ds-stairs { margin: 0; padding: 0; list-style: none; color: var(--text); font-family: var(--font-commissioner), system-ui, sans-serif; } .ds-stairs li { padding: 1.1rem 0; font-size: 2.25rem; font-variation-settings: 'FLAR' 100, 'VOLM' 0; font-weight: 520; letter-spacing: -0.012em; line-height: 1.2; } .ds-stairs li:nth-child(2) { margin-left: 7rem; } .ds-stairs li:nth-child(3) { margin-left: 14rem; }"
+    },
+    {
+      "name": "Painting Bar",
+      "kind": "custom",
+      "refersTo": "menu-bar",
+      "description": "The docked end state of the signature motion at 1440px: the strip with the eye as the bar background.",
+      "html": "<div class=\"ds-painting-bar\" role=\"img\" aria-label=\"Docked painting strip\"></div>",
+      "css": ".ds-painting-bar { height: 84px; border-bottom: 1px solid #4a3425; background: linear-gradient(90deg, rgb(20 12 7 / 0.82) 0, rgb(20 12 7 / 0.78) 12.5rem, rgb(20 12 7 / 0.14) 19rem, rgb(20 12 7 / 0.14) 100%), url('/art/minos-clean.webp') -98px -160px / 842px auto no-repeat, var(--ground); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Figure Out of the Dark",
+    "overview": "One real painting carries the identity. A 19th-century mural of Minos comes out of a warm near-black ground that was sampled from its own shadows, and every other element keeps quiet so the painting keeps its weight. There is no invented ornament: the ground, the cream text, and the dissolves all belong to the picture, and the only other image is a crop of its red drapery.\n\nEverything that is not the painting is typography and hairlines. One variable family does all the work, flared for titles and plain for reading. Density is low: sections sit 8rem apart, copy runs in short measures, and structure comes from 1px rules on the ground. Nothing is boxed, lifted, or animated in, apart from the one scroll-bound move in which the painting shrinks into the menu bar and leaves the eye looking toward the content.\n\nColour is rationed the same way. Coral appears only where it carries meaning, so a reader can scan a whole page and find the human moment by colour alone.",
+    "keyCharacteristics": [
+      "The real painting and its drapery are the only images, and both dissolve into the ground.",
+      "A warm near-black ground, never a neutral black or grey.",
+      "One family, Commissioner, with the FLAR axis at 100 on titles only.",
+      "1px hairlines instead of cards, panels, or shadows.",
+      "One coral accent, spent only on meaning.",
+      "One signature motion, bound directly to scroll."
+    ],
+    "rules": [
+      {
+        "name": "The Earned Coral Rule",
+        "body": "Coral means a human decides, needs_review, you are here, or keyboard focus. It never decorates a title, a link, or a section. The red in the painting and drapery is picture, not accent, and does not count against this rule.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sampled Ground Rule",
+        "body": "Every dark on the page is the ground or the ground with alpha. No neutral black, no neutral grey, and no scrim in any other colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The Flare Rule",
+        "body": "`'FLAR' 100, 'VOLM' 0` goes on titles and the Greek wordmark. Body, lead, statement, nav, and label text stay unflared. If a line is read rather than seen, it is plain.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Commissioner is the only family, and hierarchy comes from size, weight, and flare. Weights are finely tuned between 520 and 560 for titles and sit at 420 for reading.",
+        "section": "typography"
+      },
+      {
+        "name": "The Gaze Column Rule",
+        "body": "Supporting copy sits at 63.7% of the section width, the same line the hero copy starts on, so the page keeps reading in the direction Minos looks. Large titles start at the left edge and their supporting text answers from the gaze column.",
+        "section": "layout"
+      },
+      {
+        "name": "The Dissolve Rule",
+        "body": "Imagery has no frame inside the page. It melts into the ground, and gradients exist only for this job, in the ground colour.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Hairline Rule",
+        "body": "Structure is drawn with one 1px rule on the ground, never with a filled panel or a shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Motion Rule",
+        "body": "The painting's collapse is the only animation on the page. Sections do not fade or slide in, and anything added moves with scroll or not at all.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do let the real painting or its drapery be the only imagery, and let it dissolve into `ground`.",
+      "Do keep the crop to head, shoulders, and upper chest when the painting is shown large.",
+      "Do spend `red` only on a human step, needs_review, the current tab, focus, and selection.",
+      "Do draw structure with a 1px `line` rule and leave the rest to spacing.",
+      "Do apply `'FLAR' 100, 'VOLM' 0` to every title and to nothing that is read as text.",
+      "Do keep text at WCAG AA against the ground, at least 4.5:1 for reading sizes.",
+      "Do place supporting copy on the gaze column at 63.7% on wide layouts.",
+      "Do hold the logo on its white tile with its colours unchanged.",
+      "Do give every moving state a reduced-motion equivalent with no intermediate frames."
+    ],
+    "donts": [
+      "Don't use cards, filled panels, or boxed feature grids.",
+      "Don't use decorative icons. The drawn menu control is functional and is the only icon in the system.",
+      "Don't put small labels or eyebrows above section titles.",
+      "Don't add `box-shadow`, glow, or any lifted surface.",
+      "Don't use gradients as decoration or in any colour but the ground. Dissolves and scrims are the only gradients.",
+      "Don't add scroll reveals, entrance animations, or timed motion.",
+      "Don't add a second type family, or use `greek` for anything but the display wordmark.",
+      "Don't imitate a fresco with drawn or generated artwork, or add mythological ornament.",
+      "Don't imitate the product's interface or use product screenshots.",
+      "Don't use neutral black or grey. Darks come from `ground`."
+    ]
+  }
+}

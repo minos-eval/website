@@ -42,11 +42,11 @@ Flow: write cases (question, reference, criteria, required and forbidden tools; 
 - Primary red #c8102e (dark mode #ff5f6d), tint #fdecee, zinc neutrals, Montserrat.
 - Console tone is plain and technical; there is no written voice guide.
 - Binding naming rule (user confirmed): the customer's and the assistant's real names must never appear on the site, in copy, examples or screenshots. Also avoid details that identify the industry or customer (specific tool or system names from the customer's setup, airline vocabulary).
-- Binding visual constraint (user volunteered): an old-school feel.
+- Site design decisions (painting hero, fully dark site, no product screenshots) live in `docs/superpowers/specs/2026-11-06-minos-evals-site-design.md`.
 
 ## Evidence on Hand
 
-None publishable yet: no customer logos, testimonials, benchmarks or case studies, and none may be invented. The product's own mechanics (flow, verdicts, console sections) are real and can be shown as illustrative, clearly generic sample data.
+None publishable yet: no customer logos, testimonials, benchmarks or case studies, and none may be invented. The product's own mechanics (flow, verdicts) are real and are described in text. The only sample on the site is one short written case, labelled as a sample.
 
 ## Product Principles
 

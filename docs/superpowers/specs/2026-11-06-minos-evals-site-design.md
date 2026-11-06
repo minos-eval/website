@@ -133,9 +133,9 @@ Logo iki yarılıdır: sol bıçak `#1B1714`, sağ bıçak `#8F2A22`, ortada sap
 ## Görseller ve lisans
 
 - Kaynak fotoğraf: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mural_of_Minos_at_the_National_And_Kapodistrian_University_of_Athens_on_May_22,_2022.jpg), George E. Koronaios, CC BY-SA 4.0, 1387×2080.
-- Duvar resmi: Carl Rahl ve Edward Lebietski, Atina Üniversitesi cephesi, 19. yüzyıl.
+- Duvar resmi: Carl Rahl ve Eduard Lebiedzki, Atina Üniversitesi cephesi, 19. yüzyıl.
 - `minos-clean.jpg`: rötuşlanmış tablo. `minos-kumas.jpg`: kapanış için kırmızı kumaş kırpımı. İkisi de referans klasöründedir, `prep_mural.py` nasıl üretildiğini gösterir.
-- Sayfanın en alt satırı: "Fotoğraf: George E. Koronaios, CC BY-SA 4.0, kırpıldı ve rötuşlandı. Duvar resmi: Carl Rahl ve Edward Lebietski, Atina Üniversitesi." Lisans adı CC BY-SA 4.0 lisans metnine, fotoğraf adı Commons sayfasına bağlantı verir.
+- Sayfanın en alt satırı: "Fotoğraf: George E. Koronaios, CC BY-SA 4.0, kırpıldı ve rötuşlandı. Duvar resmi: Carl Rahl ve Eduard Lebiedzki, Atina Üniversitesi." Lisans adı CC BY-SA 4.0 lisans metnine, fotoğraf adı Commons sayfasına bağlantı verir.
 - Düzenlenmiş görseller de CC BY-SA 4.0 altındadır. Sitenin kodu ve metinleri bu lisansa dahil değildir (yaygın yorum, hukuki görüş değil).
 
 ## Diller
